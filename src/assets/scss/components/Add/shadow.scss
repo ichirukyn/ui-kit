@@ -1,0 +1,17 @@
+/* Shadow */
+
+.shadow_default {
+  box-shadow: $shadow_default;
+}
+
+.shadow_button {
+  box-shadow: $shadow_button;
+}
+
+.shadow_button_hover {
+  box-shadow: $shadow_button_hover;
+}
+
+.shadow_unset {
+  box-shadow: none !important;
+}

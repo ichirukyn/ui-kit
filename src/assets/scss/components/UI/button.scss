@@ -1,0 +1,102 @@
+.button {
+  font-family: $button_color-font-family;
+  font-weight: $button_color-font-weight;
+  padding: $button_padding;
+  //border: 1px solid $button_color-border;
+  color: $button_color-text;
+  background: $button_color-bg;
+  //background: #27abe9;
+  text-align: center;
+  border-radius: $button_radius;
+  user-select: none;
+  height: $button_height;
+  -webkit-user-drag: none;
+
+  box-shadow: 0px 0px 1px rgba(69, 121, 245, 0.24), 0px 2px 4px -1px rgba(27, 10, 82, 0.12), 0px 16px 24px rgba(69, 121, 245, 0.24),
+  0px 8px 8px -4px rgba(69, 121, 245, 0.12);
+
+  &.error {
+    border-color: #ff4848 !important;
+  }
+
+  &.button_outline-white {
+    border-color: $gray_700;
+    color: $gray_700;
+    background: transparent;
+    border: 1px solid;
+
+    &:hover {
+      border-color: $gray_700;
+      background: $gray_700;
+      color: $color_active;
+      box-shadow: 0px 0px 1px rgba(69, 121, 245, 0.24), 0px 2px 4px -1px rgba(27, 10, 82, 0.12), 0px 16px 24px rgba(69, 121, 245, 0.24),
+      0px 8px 8px -4px rgba(69, 121, 245, 0.12) !important;
+    }
+  }
+
+  &.button_outline-white-transparent {
+    background: transparent !important;
+    box-shadow: unset !important;
+    border: 1px solid $gray_700;
+  }
+
+
+  &.button_outline-white {
+    border-color: $gray_700;
+    color: $gray_700;
+    background: transparent;
+  }
+
+  &.button_outline-blue {
+    border-color: $color_active;
+    color: $color_active;
+    background: $bg_gradient_dark;
+    box-shadow: none !important;
+  }
+
+  &.button_outline-gradient {
+    box-shadow: none;
+
+    &:hover {
+      background: $bg_gradient_dark;
+      opacity: 1;
+    }
+  }
+
+  &.button_svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &:disabled {
+    background: $input_bg;
+    box-shadow: none;
+  }
+
+  &.button_svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &.button_transparent {
+    background: transparent;
+    border: 1px solid $gray_700;
+  }
+
+  &:hover {
+    background: linear-gradient(322.3deg, #00ffaa -17.04%, #4579f5 46.19%, #9c42f5 102.05%);
+    color: $button_color-text;
+  }
+}
+
+
+.button_block {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+}

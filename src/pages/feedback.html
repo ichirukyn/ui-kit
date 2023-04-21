@@ -1,0 +1,51 @@
+---
+layout: default
+title: Обратная связь
+---
+
+<div class='section__body full-width section__body_overflow-none'>
+  <div class='block_row align-center justify-space max_480_column gap-20 max_480_align-start'>
+    <h2 class='m0 text_vBold'>Обратная связь</h2>
+    <p class='text_gray_200 text_vBold'>№ договора 45215 от 25. 12. 2022</p>
+  </div>
+
+  <div class='block_column gap-30 full-width mt_40'>
+    <div>
+      <label>Тема обращения</label>
+      <select
+        class='form-control'
+        name='theme'
+        id='custom-select'
+      >
+        <option value=''>Выбрать..</option>
+        <option value='Dropdown item 2'>Повреждено оборудование</option>
+        <option value='Dropdown item 3'>Повреждено оборудование1</option>
+        <option value='Dropdown item 4'>Повреждено оборудование2</option>
+      </select>
+    </div>
+
+    <div class='input_block gap-20'>
+      <label>Текст сообщения</label>
+      <textarea class='full-width minh_200' placeholder='Введите свой текст сообщения'></textarea>
+    </div>
+
+    <div class='block_row justify-start align-center max_480_column gap-20 max_480_align-start'>
+      <div class='input_block'>
+        <input type='file' name='file' id='file' class='input_file'>
+        <label for='file' class='image_align relative'>
+          <img src='../assets/images/paperclip.svg' alt='addPhoto'>
+          <span>Прикрепить фото</span>
+          <p class='clear hidden'>x</p>
+        </label>
+      </div>
+
+      <div class='block_column gap-5'>
+        <p class='text_med text_gray_200'>Фото до 10 МБ. Формат JPG, JPEG, PNG, BMP, GIF</p>
+        <p class='text_med text_gray_200'>Не более 5 шт</p>
+      </div>
+    </div>
+
+    <button class='button button_violet text_big fit-content mt_20'>Отправить сообщение</button>
+  </div>
+
+</div>

@@ -1,0 +1,37 @@
+@import './vars';
+@import './icons-font';
+@import './fonts';
+@import './null';
+
+// Mixins
+@import './mixins/form';
+@import './mixins/media';
+@import './mixins/notMedia';
+
+// Components
+@import './components/add';
+@import './components/header';
+@import './components/footer';
+@import './components/form';
+@import './components/main';
+@import './components/sidebar';
+@import './components/table';
+@import './components/typography';
+@import './components/media';
+@import './components/policy';
+@import './components/slider';
+
+//UI
+@import './components/UI/card';
+@import './components/UI/dropdown';
+@import './components/UI/select';
+@import './components/UI/checkbox';
+@import './components/UI/button';
+@import './components/UI/input';
+@import './components/UI/accordion';
+@import './components/UI/alert';
+@import './components/UI/modal';
+@import './components/UI/action_menu';
+@import './components/UI/navbar';
+@import './components/UI/progress-bar';
+@import './components/UI/tab';

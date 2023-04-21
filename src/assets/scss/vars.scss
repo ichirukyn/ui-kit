@@ -1,0 +1,178 @@
+// background
+$bg_body: #212429;
+$bg_gradient_light: linear-gradient(135deg, rgba(245, 247, 250, 0.12) 0%, rgba(245, 247, 250, 0.06) 52.14%, rgba(245, 247, 250, 0.0001) 100%);
+$bg_gradient_dark: linear-gradient(135deg, rgba(50, 53, 61, 1), rgba(37, 40, 47, 1), rgba(26, 29, 37, 1));
+
+// border-color
+$bc_active_green: #3e6238;
+
+/* Gray */
+$gray_0: #000;
+$gray_100: rgba(255, 255, 255, 0.08);
+$gray_200: rgba(255, 255, 255, 0.04);
+$gray_300: #a3a3a3;
+$gray_400: #a7a7a7;
+$gray_500: #a3a3a3;
+$gray_600: #e0e0ff;
+$gray_700: #ffffff;
+
+/* Primary */
+$primary_0: linear-gradient(135deg, rgba(245, 247, 250, 0.12) 0%, rgba(245, 247, 250, 0.06) 52.14%, rgba(245, 247, 250, 0.0001) 100%);
+$primary_100: #2d2f33;
+$primary_200: #00f495;
+$primary_300: linear-gradient(135deg, rgba(0, 255, 170, 0.12) 0%, rgba(69, 121, 245, 0.12) 53.01%, rgba(156, 66, 245, 0.12) 99.83%);
+$primary_400: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 100) 100%);
+$primary_500: #ff597a;
+
+/* Secondary color */
+$secondary_0: #2c2536;
+$secondary_100: linear-gradient(135deg, #00ffaa 0%, #4579f5 53.01%, #9c42f5 99.83%);
+$secondary_200: #26a5e5;
+
+/* color */
+$color_active: #3e71ec;
+$color_disable: #3c3e49;
+$color_disable_bg: #3c3e49;
+
+/* Other-color */
+$error_0: #d32f2f;
+$error_100: #FF5372;
+$error_200: #FF537299;
+
+$success_0: #388e3c;
+$success_100: #66bb6a;
+$success_200: #81c784;
+
+$info_0: #0288d1;
+$info_100: #29b6f6;
+$info_200: #4fc3f7;
+
+$warning_0: #f57c00;
+$warning_100: #ffa726;
+$warning_200: #ffb74d;
+
+/* Shadow */
+$shadow_default: 0px 8px 8px rgba(9, 13, 20, 0.4), -8px -8px 16px rgba(224, 224, 255, 0.04), 16px 16px 48px rgba(9, 13, 20, 0.4);
+$shadow_button: 0 6px 15px rgba(79, 115, 177, 0.5);
+$shadow_button_hover: 0 10px 20px rgba(79, 115, 177, 0.2);
+
+/* Container */
+$container_maxw: 1166px;
+$container_margin: 0 30px;
+
+//Font
+$font_main: 'Montserrat';
+$font_sub: 'unset';
+
+/* Headers */
+$h1_margin: 0;
+$h_margin: 0;
+$h_color: $gray_700;
+
+$h1_fs: 86px;
+$h2_fs: 48px;
+$h3_fs: 32px;
+$h4_fs: 30px;
+$h5_fs: 24px;
+$h6_fs: 22px;
+
+$h1_fw: 800;
+$h2_fw: 800;
+$h3_fw: 800;
+$h4_fw: 700;
+$h5_fw: 700;
+$h6_fw: 700;
+
+$h_lh: unset;
+
+/* Text */
+$text_color: #ffffff;
+$text_lh: 32px;
+$text_fs: 16px;
+$text_fw: 500;
+
+$text_title_fw: 500;
+$text_title_fs: 24px;
+
+$text_title2_fw: 400;
+$text_title2_fs: 20px;
+
+$text_body_fw: 500;
+$text_body_fs: 18px;
+
+$text_body2_fw: 500;
+$text_body2_fs: 16px;
+$text_body2_color: $gray_700;
+
+$text_note_fw: 600;
+$text_note_fs: 14px;
+
+$text_small_fw: 400;
+$text_small_fs: 12px;
+
+/* Link */
+$link_color: $text_color;
+$link_hover-color: $secondary_200;
+
+/* Button */
+$button_color-font-family: $font_main;
+$button_color-font-weight: 600;
+
+$button_color-text: $gray_700;
+$button_color-bg: $secondary_100;
+$button_color-border: transparent;
+
+$button_padding: 15px 30px;
+$button_margin: 0;
+$button_radius: 16px;
+$button_height: 48px;
+
+/* Input */
+$input_color-focus: $secondary_200 solid 1px;
+$input_color-text: $gray_700;
+$input_bg: #373c54;
+
+$input_border: 1px solid transparent;
+$input_padding: 16px 16px 16px 14px;
+$input_margin: 0 0 0 0;
+$input_radius: 16px;
+$input_height: 56px;
+
+$input_file_bg: #f0eff3;
+$input_file_color: $gray_200;
+
+/* Textarea */
+$textarea_margin: 5px 0 0 0;
+$textarea_minh: 150px;
+
+/* Card */
+$card_padding: 24px 24px;
+$card_radius: 24px;
+$card_gap: 30px;
+$card_bg: $bg_gradient_dark;
+$card_outline: 1px solid #3d404b;
+
+/* Divider */
+$divider: rgba(255, 255, 255, 0.12);
+$divider_25p: #fff;
+$divider_50p: #fff;
+$divider_75p: #fff;
+
+/* Scroll */
+$scroll_color: $secondary_100;
+$scroll_bg: $gray_200;
+
+/* Policy */
+$policy_color-text_bold: $text_color;
+$policy_color-text: $text_color;
+$policy_lh: 140%;
+$policy_fs_main: 20px;
+$policy_fw_main: 500;
+$policy_fw_h: 600;
+
+/* Footer */
+$footer_bg: transparent;
+$footer_padding: 30px 0;
+$footer_color-text: $gray_700;
+
+$zModal: 999;

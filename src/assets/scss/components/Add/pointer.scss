@@ -1,0 +1,22 @@
+/* cursors */
+
+.cursor_pointer {
+  cursor: pointer !important;
+}
+
+.cursor_default {
+  cursor: default !important;
+}
+
+
+.event_none {
+  pointer-events: none !important;
+}
+
+.event_unset {
+  pointer-events: unset !important;
+}
+
+.event_all {
+  pointer-events: all !important;
+}

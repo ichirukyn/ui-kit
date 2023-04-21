@@ -1,0 +1,49 @@
+.action_menu {
+  max-width: 250px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  z-index: 2;
+
+  &__label button {
+    width: 100%;
+    height: unset;
+    margin: 0;
+    padding: 10px 20px;
+    border: 1px solid $color_active;
+    color: $color_active;
+    border-radius: 10px;
+  }
+
+  &__items {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-height: 120px;
+    flex-direction: column;
+    overflow-x: auto;
+    bottom: 55px;
+    padding: 10px;
+    gap: 10px;
+    border: 1px solid $color_active;
+    border-radius: 10px;
+
+    & p {
+      color: $gray_200;
+    }
+  }
+
+  &.action_menu__active .action_menu__items {
+    display: flex;
+  }
+}
+
+@include max-desktop_720 {
+  .action_menu {
+    width: unset;
+  }
+  .action_menu button {
+    padding: 10px;
+    min-height: unset !important;
+  }
+}

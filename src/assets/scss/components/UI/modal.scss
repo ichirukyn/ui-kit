@@ -1,0 +1,112 @@
+.modal {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  position: fixed;
+  min-width: 300px;
+  padding: 40px;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__active {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #00000070;
+    z-index: 100;
+
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__wrapper {
+    display: none;
+    width: 100%;
+    z-index: 100;
+  }
+
+  &__header {
+    @extend h2;
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__menu {
+    width: 100%;
+  }
+
+  &__close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+}
+
+@include max-desktop_480 {
+  .modal {
+    width: 100% !important;
+    min-width: unset !important;
+    padding: 20px !important;
+  }
+
+  .modal__menu {
+    & .button_block,
+    &.button_block,
+    & {
+      margin-top: 10px !important;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+
+    & * {
+      width: 100%;
+      margin: 0 !important;
+    }
+  }
+
+  .modal__close {
+    top: 25px;
+    right: 20px;
+  }
+}
+
+@include max-desktop_380 {
+  .modal h2 {
+    font-size: 24px;
+  }
+}
+
+@include max-desktop_968 {
+  .modal__active {
+    height: 100vh;
+    padding: 20px;
+  }
+}
+
+@include max-desktop_640 {
+  .modal__active {
+    padding: 0 !important;
+  }
+
+  .modal__content .block_row {
+    gap: 15px !important;
+  }
+
+  .modal__content .input-date label {
+    font-size: 14px !important;
+  }
+}

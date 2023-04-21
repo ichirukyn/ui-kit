@@ -1,0 +1,198 @@
+/*1920*/
+@mixin min-desktop_1920 {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_1920 {
+  @media (max-width: 1930px) {
+    @content;
+  }
+}
+
+/*1440*/
+@mixin min-desktop_1445 {
+  @media (min-width: 1445px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_1440 {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+/*1280*/
+@mixin min-desktop_1280 {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_1280 {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+/*1024*/
+@mixin min-desktop_1024 {
+  @media (min-width: 1030px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_1024 {
+  @media (max-width: 1031px) {
+    @content;
+  }
+}
+
+/*968*/
+@mixin min-desktop_968 {
+  @media (min-width: 970px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_968 {
+  @media (max-width: 968px) {
+    @content;
+  }
+}
+
+/*992*/
+@mixin min-desktop_992 {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_992 {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+/*800*/
+@mixin min-desktop_800 {
+  @media (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_800 {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+/*768*/
+@mixin min-desktop_768 {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_768 {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+
+/*720*/
+@mixin min-desktop_720 {
+  @media (min-width: 725px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_720 {
+  @media (max-width: 720px) {
+    @content;
+  }
+}
+
+/*640*/
+@mixin max-desktop_640 {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin min-desktop_640 {
+  @media (min-width: 645px) {
+    @content;
+  }
+}
+
+/*5760*/
+@mixin min-desktop_576 {
+  @media (min-width: 577px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_576 {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+/*480*/
+@mixin min-desktop_480 {
+  @media (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+
+/*380*/
+@mixin max-desktop_380 {
+  @media (max-width: 380px) {
+    @content;
+  }
+}
+
+@mixin min-desktop_380 {
+  @media (min-width: 380px) {
+    @content;
+  }
+}
+
+@mixin min-desktop_375 {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_375 {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+
+/*320*/
+@mixin min-desktop_320 {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin max-desktop_320 {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+
