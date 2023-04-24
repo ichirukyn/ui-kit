@@ -8,8 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   gap: 10px;
+
   overflow: hidden;
 }
 
@@ -19,16 +19,18 @@
 
 .status-bar .progress {
   height: 100%;
+
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(135deg, #00ffaa 0%, #4579f5 53.01%, #9c42f5 99.83%);
+
+  background: $secondary_0;
 }
 
 .status-bar .content {
   display: none;
   width: 100%;
-  //display: flex;
+
   justify-content: center;
   align-items: center;
   z-index: 1;

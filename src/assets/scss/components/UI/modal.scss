@@ -8,7 +8,7 @@
   padding: 40px;
   z-index: 100;
 
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@
     background: #00000070;
     z-index: 100;
 
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,7 @@
   }
 
   &__header {
-    @extend h2;
+    width: 100%;
   }
 
   &__content {
@@ -52,61 +52,5 @@
     right: 40px;
     cursor: pointer;
     pointer-events: all;
-  }
-}
-
-@include max-desktop_480 {
-  .modal {
-    width: 100% !important;
-    min-width: unset !important;
-    padding: 20px !important;
-  }
-
-  .modal__menu {
-    & .button_block,
-    &.button_block,
-    & {
-      margin-top: 10px !important;
-      flex-direction: column;
-      gap: 20px;
-      padding-bottom: 20px;
-    }
-
-    & * {
-      width: 100%;
-      margin: 0 !important;
-    }
-  }
-
-  .modal__close {
-    top: 25px;
-    right: 20px;
-  }
-}
-
-@include max-desktop_380 {
-  .modal h2 {
-    font-size: 24px;
-  }
-}
-
-@include max-desktop_968 {
-  .modal__active {
-    height: 100vh;
-    padding: 20px;
-  }
-}
-
-@include max-desktop_640 {
-  .modal__active {
-    padding: 0 !important;
-  }
-
-  .modal__content .block_row {
-    gap: 15px !important;
-  }
-
-  .modal__content .input-date label {
-    font-size: 14px !important;
   }
 }

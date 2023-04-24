@@ -1,0 +1,88 @@
+/* Blocks */
+
+.block_row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: $row_gap;
+}
+
+.block_row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: center;
+  gap: $row_gap;
+}
+
+.block_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $column_gap;
+}
+
+.block_column-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $column_gap;
+}
+
+.block_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $wrap_gap;
+}
+
+.half_wrap > * {
+  width: 48%;
+}
+
+.block {
+  display: block !important;
+}
+
+.block_inline {
+  display: inline-block !important;
+}
+
+/* image */
+
+.image_startX {
+  display: flex;
+  justify-content: flex-start;
+  gap: $image_align;
+}
+
+.image_centerX {
+  display: flex;
+  justify-content: center;
+  gap: $image_align;
+}
+
+.image_endX {
+  display: flex;
+  justify-content: flex-end;
+  gap: $image_align;
+}
+
+.image_topY {
+  display: flex;
+  align-items: flex-start;
+  gap: $image_align;
+}
+
+.image_centerY {
+  display: flex;
+  align-items: center;
+  gap: $image_align;
+}
+
+.image_bottomY {
+  display: flex;
+  align-items: flex-end;
+  gap: $image_align;
+}

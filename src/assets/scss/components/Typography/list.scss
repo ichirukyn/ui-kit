@@ -1,0 +1,28 @@
+/* list-style */
+
+.lst_disc {
+  list-style: disc !important;
+}
+
+.lst_decimal {
+  list-style: decimal !important;
+}
+
+.lst_circle {
+  list-style: circle !important;
+}
+
+
+/* list-position */
+
+.lstp_inside li {
+  list-style-position: inside !important;
+}
+
+.lstp_outside li {
+  list-style-position: outside !important;
+}
+
+.lstp_unset li {
+  list-style-position: unset !important;
+}

@@ -21,10 +21,6 @@
     &.accordion__active img[alt='arrow_left'] {
       transform: rotate(0deg);
     }
-
-    & img[alt='arrow_left'] {
-      transform: rotate(-90deg);
-    }
   }
 }
 
@@ -38,10 +34,12 @@
   height: 100vh;
 }
 
-/* Style the accordion panel. Note: hidden by default */
+
 .panel {
+  display: none;
+
   &.active {
-    display: flex !important;
+    display: flex;
   }
 
   &_absolute {
@@ -55,8 +53,5 @@
     bottom: 50px;
     z-index: 10;
     padding: 15px 0 !important;
-    @media (max-width: 576px) and (min-width: 430px) {
-      right: 0;
-    }
   }
 }

@@ -1,51 +1,22 @@
-.sidebar__main-wrapper {
-  max-width: 270px;
-  width: 100%;
-}
-
-.sidebar__main-wrapper,
+.sidebar__wrapper,
 .navbar__wrapper {
   position: sticky;
   top: 120px;
-}
 
-.sidebar__wrapper {
-  background: linear-gradient(135deg, rgb(50, 53, 61), rgb(37, 40, 47), rgb(26, 29, 37));
-  box-shadow: 0px 1px 1px rgba(9, 13, 20, 0.4), -4px -4px 8px rgba(224, 224, 255, 0.04), 8px 8px 24px rgba(9, 13, 20, 0.4);
-}
+  background: $sidebar_bg;
 
-@include max-desktop_380 {
-  .sidebar__trailer_wrapper .card_bg_content {
-    padding: 0 !important;
-  }
+  max-width: $sidebar_maxw;
+  width: 100%;
 }
-
 
 .sidebar {
-  max-width: 270px;
+  max-width: $sidebar_maxw;
   width: 100%;
-  padding: 24px;
+  padding: $sidebar_padding;
   border-radius: 20px;
 
   & .active {
     color: $color_active;
     font-weight: 700;
-  }
-}
-
-.sidebar__trailer_play {
-  cursor: pointer;
-  pointer-events: all;
-  z-index: 10;
-}
-
-@include max-desktop_576 {
-  .block_row.poker_column {
-    flex-direction: column;
-    gap: 16px;
-
-    & *{
-      width: 100%;
-    }
   }
 }

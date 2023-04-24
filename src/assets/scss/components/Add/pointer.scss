@@ -20,3 +20,18 @@
 .event_all {
   pointer-events: all !important;
 }
+
+/* Select */
+
+.us_none {
+  user-select: none !important;
+}
+
+.us_unset {
+  user-select: unset !important;
+}
+
+.us_all {
+  user-select: all !important;
+}
+

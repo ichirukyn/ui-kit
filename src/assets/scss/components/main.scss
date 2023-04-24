@@ -1,27 +1,7 @@
+@import url('./Main/block.scss');
+@import url('./Main/object.scss');
+
 /* Main block */
-#root {
-  height: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-
-  overflow-x: hidden;
-}
-
-.root__double {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  gap: 40px;
-  z-index: 11;
-}
-
-
 .container_wrapper {
   width: 100%;
   display: flex;
@@ -33,7 +13,6 @@
   position: relative;
   z-index: 5;
   width: 100%;
-  width: -webkit-fill-available;
   max-width: $container_maxw;
   display: flex;
   align-items: center;
@@ -45,132 +24,8 @@
   }
 }
 
-.section {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 100px;
-  margin: 80px 0;
 
-  & .section__body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px;
-    width: 100%;
-    overflow-x: hidden;
-
-    @include max-desktop_480 {
-      padding: 0 10px;
-    }
-  }
-}
-
-/* Image */
-img {
-  max-width: 100%;
-  object-fit: cover;
-  user-select: none;
-  pointer-events: none;
-  -webkit-user-drag: none;
-}
-
-.image_align {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-}
-
-.image_align-evo {
-  gap: 10px;
-  white-space: nowrap;
-}
-
-.image_justify {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 10px;
-}
-
-.image_reverse_180 {
-  transform: rotate(180deg);
-}
-
-@include max-desktop_1024 {
-  img[alt='evo'] {
-    max-width: 25px;
-  }
-}
-
-
-.img_object-unset {
-  object-fit: unset !important;
-}
-
-.img_object-none {
-  object-fit: none !important;
-}
-
-.img_object-fill {
-  object-fit: fill !important;
-}
-
-.img_top {
-  object-position: top !important;
-}
-
-.image_align {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.loading {
-  background: $bg_body;
-  z-index: 9999;
-}
-
-/* Blocks */
-
-.block_row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 30px;
-}
-
-.block_row-reverse {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.block_column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.block_column-reverse {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-}
-
-.block_wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 10px;
-}
-
-.half_wrap > * {
-  width: 48%;
-}
-
+// deprecate
 .text_block {
   position: relative;
   display: flex;
@@ -197,19 +52,6 @@ img {
   }
 }
 
-/* Others */
-
-.user-select_unset {
-  user-select: unset !important;
-}
-
-.user-select_none {
-  user-select: none;
-}
-
-.hidden {
-  display: none !important;
-}
 
 .overlay {
   width: 100%;
@@ -223,137 +65,18 @@ img {
   z-index: 3;
 }
 
+// deprecate
 .inputblock.error {
   * {
     color: #ff4343;
   }
 }
 
+// deprecate
 .CopyIcon:hover path {
   fill: $color_active;
 }
 
-/**/
-
-.error {
-  @include max-desktop_720 {
-    & .working__wrapper .working__bg_wrapper img {
-      top: 50px !important;
-      right: -70px;
-    }
-  }
-  @include max-desktop_640 {
-    & .working__wrapper .working__bg_wrapper img {
-      right: -100px;
-    }
-  }
-  @include max-desktop_480 {
-    & .working__wrapper .working__bg_wrapper img {
-      right: -150px;
-      opacity: 0.6;
-    }
-    & .working__wrapper {
-      gap: 0 !important;
-    }
-    & .working__wrapper .working__bg_wrapper {
-      max-width: 15px;
-    }
-  }
-}
-
-.error__surface {
-  left: unset;
-  right: 0;
-  top: -10px;
-}
-
-.fa_gray_700 {
-  //max-width: 24px;
-  //max-height: 24px;
-  width: 20px;
-  height: 20px;
-
-  background: $gray_700;
-  padding: 5px;
-  border-radius: 50%;
-
-  & path {
-    fill: $gray_0;
-    width: 24px;
-  }
-}
-
-.header__menu {
-  @include max-desktop_1024 {
-    & .header__button .panel {
-      margin-top: 10px !important;
-      margin-left: 10px !important;
-
-    }
-    & .header__button .header__menu_user {
-      padding: 5px 0 !important;
-    }
-  }
-}
-
-img[alt=info_warning] {
-  max-width: 50px;
-}
-
-@include max-desktop_480 {
-  .command_project_alert {
-    min-width: 230px !important;
-    //right: -150px;
-  }
-
-  .investor_project_alert {
-    min-width: 100px !important;
-    //position: relative;
-    //left: 100px !important;
-  }
-  .stake_project_alert {
-    position: relative;
-    left: -100px !important;
-    //max-width: 200px;
-  }
-
-  .token__wrapper .token__graph .token__info_right.relative.left_20.block_row.gap-20 {
-    left: 15px !important;
-  }
-}
-
-.img_maxw_30 {
-  & .icon-telegram:before,
-  & .icon-telegram:after {
-    font-size: 20px !important;
-  }
-
-  & img {
-    max-width: 26px !important;
-  }
-}
-
-.footer__link .panel_absolute_bottom {
-  bottom: 25px !important;
-}
-
-.game-serve_img img {
-  max-width: 170px;
-  min-width: 100px;
-  width: 100%;
-  height: 100%;
-  //height: 170px;
-}
-
-@include max-desktop_1280 {
-  .poker_column {
-    flex-direction: column;
-
-    & button {
-      width: 100% !important;
-    }
-  }
-}
 
 //.password {
 //  position: absolute;
@@ -365,131 +88,6 @@ img[alt=info_warning] {
 //  //background: url(src/client/assets/images/lk/error.png) 0 0 no-repeat;
 //}
 
-.object_svg {
-  width: 100% !important;
-}
-
-button object {
-  max-width: 25px;
-  max-height: 25px;
-}
-
-.update__wrapper {
-
-}
-
-.update__widget {
-  @include max-desktop_800 {
-    & > .block_row {
-      flex-direction: column-reverse;
-      align-items: flex-end !important;
-
-      & > div {
-        //width: 100%;
-        //max-width: unset !important;
-      }
-    }
-    .update__date {
-      padding: 0 !important;
-      max-width: 160px !important;
-
-      & > div {
-        padding: 4px !important;
-      }
-    }
-  }
-}
-
-//
-//.rank {
-//  & defs > * {
-//    display: none;
-//  }
-//}
-//
-//.rank_1 {
-//  & > defs .rank1 ~ *,
-//  & > defs .rank1 {
-//    display: unset !important;
-//  }
-//}
-//
-////.rank_2 {
-////  & > defs .rank2 ~ *,
-////  & > defs .rank2 {
-////    display: unset !important;
-////  }
-////}
-//
-//.rank_3 {
-//  & > defs .rank3 ~ *,
-//  & > defs .rank3 {
-//    display: unset !important;
-//  }
-//}
-//
-//.rank_4 {
-//  & > defs .rank4 ~ *,
-//  & > defs .rank4 {
-//    display: unset !important;
-//  }
-//}
-//
-//.rank_5 {
-//  & > defs .rank5 ~ *,
-//  & > defs .rank5 {
-//    display: unset !important;
-//  }
-//}
-//
-//.rank_6 {
-//  & > defs .rank6 ~ *,
-//  & > defs .rank6 {
-//    display: unset !important;
-//  }
-//}
-//
-//.rank_7 {
-//  & > defs .rank7 ~ *,
-//  & > defs .rank7 {
-//    display: unset !important;
-//  }
-//}
-//
-//.rank_8 {
-//  & > defs .rank8 ~ *,
-//  & > defs .rank8 {
-//    display: unset !important;
-//  }
-//}
-//
-//.rank_9 {
-//  & > defs .rank9 ~ *,
-//  & > defs .rank9 {
-//    display: unset !important;
-//  }
-//}
-
-.game-page {
-  &.csgo {
-    @include max-desktop_480 {
-      .tab__list {
-        flex-direction: column !important;
-      }
-      .tab.tab_active .block_column.card {
-        max-width: unset !important;
-      }
-    }
-  }
-}
-
-.csgo__stats_modal {
-  @include max-desktop_640 {
-    top: 90px !important;
-    transform: translate(-50%, 0) !important;
-    max-height: calc(100vh - 90px);
-  }
-}
 
 .block__alert {
   border: 1px solid;

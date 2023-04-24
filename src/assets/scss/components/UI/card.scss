@@ -1,106 +1,35 @@
 .card {
   padding: $card_padding;
   border-radius: $card_radius;
-  //gap: $card_gap;
+  gap: $card_gap;
   background: $card_bg;
-  box-shadow: 0px 1px 1px rgb(9 13 20 / 40%), -4px -4px 8px rgb(224 224 255 / 4%), 8px 8px 24px rgb(9 13 20 / 40%);
 }
 
-.card_svg {
-  width: 68px;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  & img {
-    min-width: 36px;
-  }
+.card_gradient {
+  background: $secondary_0;
 
-  padding: 15px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
-  mix-blend-mode: normal;
+  border-radius: $card_radius;
+  border: 1px solid transparent;
 
-  @include max-desktop_640 {
-    width: 56px;
-    height: 56px;
-
-    & img {
-      min-width: unset;
-      min-height: unset;
-      width: 100%;
-    }
-  }
-
-  &.card_svg_50 {
-    width: 50px;
-    height: 50px;
-    padding: unset;
-
-    & img {
-      max-width: 25px;
-      min-width: unset;
-      min-height: unset;
-    }
-  }
-}
-
-.card_bg_gradient {
-  background: linear-gradient(135deg, rgba(0, 255, 170, 1), rgba(69, 121, 245, 1), rgba(156, 66, 245, 1));
-  border-radius: 15px;
-
-  & .card_bg_content {
-    border-radius: 15px;
+  & .card_content {
+    border-radius: $card_radius;
     background: $bg_gradient_dark;
-    //backdrop-filter: blur(54.3656px);
-    margin: 2px;
   }
 }
 
-
-.card_bg_gradient-hover:hover {
-  transition: 0.5s;
-  cursor: pointer;
-
-  &.card_bg_gradient {
-    //background: $color_active;
-    transition: 0.5s;
-
-    & .card_bg_content {
-      background: transparent;
-      transition: 0.5s;
-    }
-  }
-}
 
 .card_outline {
   background: transparent;
   border: $card_outline;
 }
 
-.card_outline_blue {
+
+.card_outline_active {
   background: transparent;
-  border: 1px solid #2a73c9;
+  border: 1px solid $color_active;
 }
 
-.card_outline_green {
-  background: rgba(0, 244, 149, 0.08);
-  border: 1px solid #00f495;
-}
-
-.card__image {
-  overflow: hidden;
-  position: relative;
-  padding: 50px 0 50px 50px;
-  border-radius: 30px;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(23.5px);
-}
-
-.card_block {
-  display: block;
-}
 
 .card_absolute {
   position: absolute;
@@ -108,16 +37,4 @@
   bottom: 0;
   left: -100%;
   right: -100%;
-}
-
-@include max-desktop_380 {
-  .card,
-  .card_bg_content {
-    padding: 20px !important;
-  }
-
-  .card_p10.card,
-  .card_p10.card_bg_content {
-    padding: 10px !important;
-  }
 }

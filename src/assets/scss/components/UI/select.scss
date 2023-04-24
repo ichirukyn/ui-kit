@@ -1,3 +1,5 @@
+//deprecate
+
 //Начальный контейнер
 .choices {
   height: 52px;
@@ -78,5 +80,5 @@
 
 //Скролл
 .choices__list {
-  @extend .minw_140;
+  min-width: 140px;
 }

@@ -87,10 +87,13 @@ ___
 .vh_100 // height: 100vh;
 
 .opacity_40p // opacity: 0.4;
+
+.text_vBold // font-weight: 700
 ```
 
-- p - от Англ. percent
-- vh - view-height
+- p -- от Англ. percent
+- vh -- view-height
+- vBold, eBold -- very bold, extra bold.
 
 ---
 

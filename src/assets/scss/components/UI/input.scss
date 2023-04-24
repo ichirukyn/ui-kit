@@ -8,15 +8,12 @@ label {
 
   user-select: none;
 
-  @include max-desktop_480 {
-    font-size: 12px;
+  &.required::after {
+    content: ' *';
+    color: $error_0;
   }
 }
 
-.required::after {
-  content: ' *';
-  color: $error_0;
-}
 
 input,
 textarea {
@@ -38,17 +35,18 @@ textarea {
   background: $input_bg;
 
 
-
   &:focus-visible {
-    //outline: $input_color-focus;
+    outline: $input_color-focus;
   }
+
 
   &.error {
-    border-color: #ff4848 !important;
+    border-color: $error_100 !important;
   }
 
+
   &:disabled {
-    opacity: 0.8;
+    background: $color_disable_bg;
   }
 }
 
@@ -84,43 +82,35 @@ textarea {
   }
 }
 
+
 input[type='time'],
 input[type='date'] {
   padding-right: 15px;
 }
 
-.input_block {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  justify-content: flex-start;
-  gap: 8px;
-}
-
-.input_column {
-  display: flex;
-  flex-direction: column;
-}
 
 .input_row {
   display: flex;
-  gap: 30px;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 30px;
 
   & > div {
     width: 100%;
   }
 }
 
+//Testing
 .input_edit_svg {
   width: 30px;
+
   display: inline-block;
+
   position: absolute;
   bottom: 12px;
   right: -40px;
   height: 30px;
+
   //background: url(../images/edit.svg) 0 0 no-repeat;
 }
 

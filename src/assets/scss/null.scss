@@ -16,18 +16,19 @@
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
+
 *::-webkit-scrollbar {
   height: 6px;
   width: 6px;
   background: $scroll_bg;
-  -webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling: touch;
 }
 
 *::-webkit-scrollbar-thumb {
   background: $scroll_color;
   border-radius: 50px;
   height: 20px;
-  -webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling: touch;
 }
 
 *,
@@ -37,20 +38,24 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 :focus,
 :active {
   outline: none;
 }
+
 a:focus,
 a:active {
   outline: none;
 }
+
 nav,
 footer,
 header,
 aside {
   display: block;
 }
+
 html,
 body {
   min-height: 100%;
@@ -62,6 +67,7 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 html {
   height: 100%;
 }
@@ -71,29 +77,37 @@ button,
 textarea {
   font-family: inherit;
 }
+
 input::-ms-clear {
   display: none;
 }
+
 button {
   cursor: pointer;
 }
+
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
 a,
 a:visited {
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 ul li {
   list-style: none;
 }
+
 img {
   vertical-align: top;
 }
+
 h1,
 h2,
 h3,

@@ -25,8 +25,8 @@ $primary_400: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 2
 $primary_500: #ff597a;
 
 /* Secondary color */
-$secondary_0: #2c2536;
-$secondary_100: linear-gradient(135deg, #00ffaa 0%, #4579f5 53.01%, #9c42f5 99.83%);
+$secondary_0: linear-gradient(135deg, #00ffaa 0%, #4579f5 53.01%, #9c42f5 99.83%);
+$secondary_100: #2c2536;
 $secondary_200: #26a5e5;
 
 /* color */
@@ -64,6 +64,10 @@ $container_margin: 0 30px;
 $font_main: 'Montserrat';
 $font_sub: 'unset';
 
+$font_main_path: '@/shared/fonts/Montserrat';
+$font_sub_path: '';
+
+
 /* Headers */
 $h1_margin: 0;
 $h_margin: 0;
@@ -86,7 +90,7 @@ $h6_fw: 700;
 $h_lh: unset;
 
 /* Text */
-$text_color: #ffffff;
+$text_color: $gray_700;
 $text_lh: 32px;
 $text_fs: 16px;
 $text_fw: 500;
@@ -102,7 +106,6 @@ $text_body_fs: 18px;
 
 $text_body2_fw: 500;
 $text_body2_fs: 16px;
-$text_body2_color: $gray_700;
 
 $text_note_fw: 600;
 $text_note_fs: 14px;
@@ -128,7 +131,7 @@ $button_radius: 16px;
 $button_height: 48px;
 
 /* Input */
-$input_color-focus: $secondary_200 solid 1px;
+$input_color-focus: 1px solid transparent;
 $input_color-text: $gray_700;
 $input_bg: #373c54;
 
@@ -145,12 +148,20 @@ $input_file_color: $gray_200;
 $textarea_margin: 5px 0 0 0;
 $textarea_minh: 150px;
 
+/* Block */
+$row_gap: 30px;
+$column_gap: 10px;
+$wrap_gap: 10px 10px;
+$image_align: 15px;
+$image_justify: 15px;
+
+
 /* Card */
 $card_padding: 24px 24px;
 $card_radius: 24px;
-$card_gap: 30px;
+$card_gap: 20px;
 $card_bg: $bg_gradient_dark;
-$card_outline: 1px solid #3d404b;
+$card_outline: 1px solid;
 
 /* Divider */
 $divider: rgba(255, 255, 255, 0.12);
@@ -170,9 +181,23 @@ $policy_fs_main: 20px;
 $policy_fw_main: 500;
 $policy_fw_h: 600;
 
+/* Sidebar */
+$sidebar_bg: transparent;
+$sidebar_maxw: 270px;
+$sidebar_padding: 20px;
+
+
+/* Header */
+$header_bg: $bg_gradient_light;
+$header_padding: 0 30px;
+$header_color-text: $gray_700;
+$header_height: 80px;
+
 /* Footer */
 $footer_bg: transparent;
 $footer_padding: 30px 0;
 $footer_color-text: $gray_700;
 
-$zModal: 999;
+/* Table */
+$table_thead_bb: transparent;
+$table_border_radius: 16px;

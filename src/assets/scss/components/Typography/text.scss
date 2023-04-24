@@ -1,0 +1,197 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $h_color;
+  margin: $h_margin;
+  line-height: $h_lh;
+}
+
+h1 {
+  margin: $h1_margin;
+  font-size: $h1_fs;
+  font-weight: $h1_fw;
+}
+
+h2 {
+  font-size: $h2_fs;
+  font-weight: $h2_fw;
+}
+
+h3 {
+  font-size: $h3_fs;
+  font-weight: $h3_fw;
+}
+
+h4 {
+  font-size: $h4_fs;
+  font-weight: $h4_fw;
+}
+
+h5 {
+  font-size: $h5_fs;
+  font-weight: $h5_fw;
+}
+
+h6 {
+  font-size: $h6_fs;
+  font-weight: $h6_fw;
+}
+
+.text_title,
+.text_title2,
+.text_body,
+.text_body2,
+.text_note,
+.text_small {
+  line-height: $text_lh;
+}
+
+.text_title {
+  font-size: $text_title_fs;
+  font-weight: $text_title_fw;
+}
+
+.text_title2 {
+  font-size: $text_title2_fs;
+  font-weight: $text_title2_fw;
+}
+
+.text_body {
+  font-size: $text_body_fs;
+  font-weight: $text_body_fw;
+}
+
+.text_body2 {
+  font-size: $text_body2_fs;
+  font-weight: $text_body2_fw;
+}
+
+.text_note {
+  font-size: $text_note_fs;
+  font-weight: $text_note_fw;
+}
+
+.text_small {
+  font-weight: $text_small_fw;
+  font-size: $text_small_fs;
+}
+
+
+/* text-transform */
+
+.text_big {
+  text-transform: uppercase;
+}
+
+.text_low {
+  text-transform: lowercase;
+}
+
+
+/* text_align */
+
+.text_start {
+  text-align: start;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_end {
+  text-align: end;
+}
+
+
+/* text_font-family */
+
+.text_font-main {
+  font-family: $font_main !important;
+}
+
+.text_font-sub {
+  font-family: $font_sub !important;
+}
+
+
+/* text_font-weight */
+
+.text_eLight {
+  font-weight: 200 !important;
+}
+
+.text_eLight-hover:hover {
+  font-weight: 200 !important;
+}
+
+.text_light {
+  font-weight: 300 !important;
+}
+
+.text_light-hover:hover {
+  font-weight: 300 !important;
+}
+
+.text_reg {
+  font-weight: 400 !important;
+}
+
+.text_reg-hover:hover {
+  font-weight: 400 !important;
+}
+
+.text_med {
+  font-weight: 500 !important;
+}
+
+.text_med-hover:hover {
+  font-weight: 500 !important;
+}
+
+.text_bold {
+  font-weight: 600 !important;
+}
+
+.text_bold-hover:hover {
+  font-weight: 600 !important;
+}
+
+.text_vBold {
+  font-weight: 700 !important;
+}
+
+.text_vBold-hover:hover {
+  font-weight: 700 !important;
+}
+
+.text_eBold {
+  font-weight: 800 !important;
+}
+
+.text_eBold-hover:hover {
+  font-weight: 800 !important;
+}
+
+/* other */
+
+.text_ov {
+  text-overflow: ellipsis;
+
+  /* Needed to make it work */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* word_break */
+
+.word-break {
+  word-break: break-word;
+  white-space: nowrap;
+}
+
+.word-break-wrap {
+  word-break: break-word;
+  white-space: normal !important;
+}
