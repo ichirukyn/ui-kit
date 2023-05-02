@@ -36,7 +36,7 @@
 
 
 .panel {
-  display: none;
+  display: flex;
 
   &.active {
     display: flex;

@@ -202,7 +202,8 @@
   color: $color_active;
 }
 
-.text_active-h:hover {
+.text_active-h:hover,
+.text_active-h:hover *,  {
   color: $color_active !important;
   transition: 0.3s ease-in-out;
 }
