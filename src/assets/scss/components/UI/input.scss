@@ -3,8 +3,7 @@ label {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: $gray_700;
-  opacity: 0.6;
+  color: $gray_300;
 
   user-select: none;
 
@@ -168,3 +167,6 @@ input[type='date'] {
   cursor: pointer;
   color: $error_0;
 }
+
+@import 'Input/Radio';
+@import 'Input/Check';

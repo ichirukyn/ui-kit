@@ -1,3 +1,5 @@
+@import "vars";
+
 @font-face {
   font-family: '#{$font_main}';
   src: url('#{$font_main_path}/#{$font_main}-ExtraLight.ttf') format('truetype');

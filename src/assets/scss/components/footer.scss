@@ -5,6 +5,6 @@ footer {
   padding: $footer_padding;
 
   & * {
-    color: $footer_color-text !important;
+    color: $footer_color-text;
   }
 }

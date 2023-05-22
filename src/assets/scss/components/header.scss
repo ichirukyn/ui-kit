@@ -8,6 +8,8 @@ header {
 
   background: $header_bg;
 
+  box-shadow: $shadow_default;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,11 +22,11 @@ header {
     width: 100%;
 
     padding: $header_padding;
+    margin: 0 30px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 
   & .menu {
@@ -37,19 +39,26 @@ header {
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: #32343ad9;
 
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
     }
 
     &__list {
+      min-width: 280px;
       position: relative;
       border-radius: 0 !important;
     }
   }
 }
 
+.header__lang {
+  @include max-desktop_1024 {
+    width: 100%;
+    padding-right: 20px;
+  }
+}
 
 .header__burger {
   display: none;

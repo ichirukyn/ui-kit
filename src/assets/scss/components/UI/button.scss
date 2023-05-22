@@ -3,6 +3,7 @@
 
   font-family: $button_color-font-family;
   font-weight: $button_color-font-weight;
+  font-size: 18px;
 
   text-align: center;
 
@@ -17,6 +18,9 @@
   user-select: none;
   -webkit-user-drag: none;
 
+  &:hover {
+    color: $gray_700;
+  }
 
   &.button_outline_white {
     border-color: $gray_700;
@@ -27,7 +31,7 @@
 
   &.button_outline_active {
     border-color: $color_active;
-    color: $color_active;
+    color: $color_active !important;
     background: transparent;
   }
 

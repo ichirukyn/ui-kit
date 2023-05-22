@@ -1,0 +1,43 @@
+/* Radio */
+
+.radio_button {
+  display: inline-block;
+}
+
+.radio_button input[type=radio] {
+  display: none;
+}
+
+.radio_button label {
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+
+  font-size: $text_note_fs;
+  font-weight: $text_note_fw;
+  color: $input_color-text;
+
+  padding: $input_padding;
+  border-radius: $input_radius;
+  background: transparent;
+  border: 1px solid $gray_600;
+
+  user-select: none;
+}
+
+/* Checked */
+.radio_button input[type=radio]:checked + label {
+  background: $color_active;
+  color: $gray_700;
+}
+
+/* Hover */
+.radio_button label:hover {
+  color: $color_active;
+}
+
+/* Disabled */
+.radio_button input[type=radio]:disabled + label {
+  background: $color_disable_bg;
+  color: $color_disable;
+}
