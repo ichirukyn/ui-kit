@@ -1,0 +1,96 @@
+//Font
+$font_main: 'Montserrat';
+$font_sub: 'unset';
+
+$font_main_path: '../fonts/Montserrat';
+$font_sub_path: '';
+
+
+/* Headers */
+$h1_margin: 0;
+$h_margin: 0;
+
+$h_lh: normal;
+
+
+$text_lh: 24px;
+$text_fw: 400;
+$text_fs: 16px;
+$text_color: var(--gray_300);
+
+$text: (
+  text_title: (
+    affix: 'text_title',
+    text_title_fw: 500,
+    text_title_fs: 20px,
+    text_title_color: var(--gray_100),
+  ),
+  text_title2: (
+    affix: 'text_title2',
+    text_title2_fw: 500,
+    text_title2_fs: 18px,
+    text_title2_color: var(--gray_100),
+  ),
+  text_body: (
+    affix: 'text_body',
+    text_body_fw: 400,
+    text_body_fs: 16px,
+    text_body_color: var(--gray_100),
+  ),
+  text_body2: (
+    affix: 'text_body2',
+    text_body2_fw: 400,
+    text_body2_fs: 16px,
+    text_body2_color: var(--gray_300),
+  ),
+  text_note: (
+    affix: 'text_note',
+    text_note_fw: 400,
+    text_note_fs: 14px,
+    text_note_color: var(--gray_300),
+  ),
+  text_small: (
+    affix: 'text_small',
+    text_small_fw: 300,
+    text_small_fs: 12px,
+    text_small_color: var(--gray_300),
+  ),
+);
+
+:root {
+  --font_main: #{$font_main};
+  --font_sub: #{$font_sub};
+
+  // Header
+  --h1_margin: 0;
+  --h_margin: 0;
+  --h_lh: normal;
+  --h_color: var(--gray_0);
+  // font-size
+  --h1_fs: 64px;
+  --h2_fs: 42px;
+  --h3_fs: 36px;
+  --h4_fs: 28px;
+  --h5_fs: 24px;
+  --h6_fs: 22px;
+  // font-weight
+  --h1_fw: 700;
+  --h2_fw: 700;
+  --h3_fw: 700;
+  --h4_fw: 600;
+  --h5_fw: 600;
+  --h6_fw: 600;
+
+  --text_lh: #{$text_lh};
+  --text_fw: #{$text_fw};
+  --text_fs: #{$text_fs};
+  --text_color: #{$text_color};
+
+  @each $t, $value in $text {
+    @each $k, $v in $value {
+      @if ($k != 'affix') {
+        --#{$k}: #{$v};
+      }
+    }
+  }
+}

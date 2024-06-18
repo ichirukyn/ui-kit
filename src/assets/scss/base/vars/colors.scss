@@ -1,0 +1,51 @@
+$colors: (
+  // gray
+  gray_0: #000,
+  gray_100: #2F2F2F,
+  gray_200: #3D3D3D,
+  gray_300: #808080,
+  gray_400: #889094,
+  gray_500: #F3F7F8,
+  gray_600: #F7F9FB,
+  gray_700: #ffffff,
+  // primary
+  primary_0: #C1D1DC,
+  primary_100: #9BB7C7,
+  primary_200: #097fed,
+  // secondary
+  secondary_0: #C1D1DC,
+  secondary_100: #9BB7C7,
+  secondary_200: #097fed,
+  // func-color
+  color_active: #3c3e49,
+  color_active_hover: #3c3e49,
+  color_disable: #3c3e49,
+  color_disable_hover: #3c3e49,
+  // others-color
+  error_0: #DA363E,
+  error_100: #FF5372,
+  error_200: #FF537299,
+  success_0: #27AE60,
+  success_100: #66bb6a,
+  success_200: #CCEBD9,
+  info_0: #0288d1,
+  info_100: #29b6f6,
+  info_200: #4fc3f7,
+  warning_0: #E67E22,
+  warning_100: #ffa726,
+  warning_200: #FFF5E4,
+  // base colors
+  bg_body: #f0f0f0,
+  text_color: #f0f0f0,
+  link_color: #097fed,
+  link_color_hover: #097fed,
+);
+
+
+:root {
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
+}
+
+

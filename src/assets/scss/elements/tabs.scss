@@ -1,0 +1,102 @@
+.tab__wrapper {
+  .tab {
+    display: none;
+  }
+
+  .tab_active {
+    display: flex;
+  }
+
+  .tab__title {
+    border-bottom: 2px solid transparent;
+
+    @include max-480 {
+      gap: 10px !important;
+    }
+
+    &__wrapper {
+      @include max-375 {
+        gap: 10px !important;
+      }
+    }
+
+    & > * {
+      pointer-events: none;
+    }
+
+    & > p {
+      color: $secondary_0;
+
+      @include max-380 {
+        font-size: 10px !important;
+      }
+    }
+
+    &:hover {
+      border-color: $secondary_0;
+
+      & > p {
+        color: $gray_0;
+      }
+    }
+
+    &.tab_active {
+      border-color: $secondary_0;
+
+      & > p {
+        color: $gray_0;
+      }
+    }
+
+    &_button {
+      border: 1px solid #c1d2dc;
+      padding: 15px 30px !important;
+      background: $gray_700 !important;
+
+      @include max-576 {
+        padding: 10px 20px !important;
+      }
+
+      &__icon {
+        @include max-576 {
+          max-width: 12px !important;
+          max-height: 15px !important;
+        }
+      }
+
+      p {
+        margin-top: 3px !important;
+        color: $secondary_0 !important;
+      }
+
+      svg {
+        rect {
+          fill: $secondary_0;
+        }
+
+        circle, path {
+          stroke: $secondary_0;
+        }
+      }
+
+      &.tab_active {
+        background: $secondary_0 !important;
+
+        p {
+          color: $gray_700 !important;
+        }
+
+
+        svg {
+          rect {
+            fill: $gray_700;
+          }
+
+          circle, path {
+            stroke: $gray_700;
+          }
+        }
+      }
+    }
+  }
+}

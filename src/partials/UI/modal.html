@@ -1,0 +1,74 @@
+<div class='modal__wrapper' id='modal_register-hint'>
+  <div class='modal card__wrapper maxw_500 minh_300 gap-40 p20-25'>
+    <img class='modal__close' id='modal__close' src='../assets/images/close.svg' alt='close'>
+    <div class='modal__header m0'>
+    </div>
+
+    <div class='modal__content block_column align-center text_center gap-20'>
+      <p class='text_body2 text_bold'>Выберите новое время тренировки</p>
+
+      <div class='block_row full-width'>
+        <div class='block_column gap-15'>
+          <div class='input-date'>
+            <input id='radio-1' type='radio' name='radio' value='1' disabled='disabled'>
+            <label for='radio-1'>с 08:30 по 9:15</label>
+          </div>
+
+          <div class='input-date'>
+            <input id='radio-2' type='radio' name='radio' value='1' checked>
+            <label for='radio-2'>с 09:15 по 10:45</label>
+          </div>
+
+          <div class='input-date'>
+            <input id='radio-3' type='radio' name='radio' value='1'>
+            <label for='radio-3'>с 10:50 по 11:30</label>
+          </div>
+        </div>
+
+
+        <div class='block_column gap-15'>
+          <div class='input-date'>
+            <input id='radio-6' type='radio' name='radio' value='1'>
+            <label for='radio-6'>с 08:30 по 9:45</label>
+          </div>
+
+          <div class='input-date'>
+            <input id='radio-7' type='radio' name='radio' value='1' disabled='disabled'>
+            <label for='radio-7'>с 08:30 по 9:45</label>
+          </div>
+
+          <div class='input-date'>
+            <input id='radio-8' type='radio' name='radio' value='1' disabled='disabled'>
+            <label for='radio-8'>с 08:30 по 9:45</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class='modal__menu block_row align-center max_480_column-reverse'>
+      <button class='button m0' id='modal__close'>Отмена</button>
+      <button class='button button_violet m0' id='modal__close'>Выбрать время</button>
+    </div>
+  </div>
+</div>
+
+<button class='button' id='modal__open'>Открой меня!</button>
+
+<script>
+  const modal = document.querySelector('.modal__wrapper');
+
+  //open modal
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('#modal__open')) {
+      modal.classList.add('modal__active');
+    }
+  });
+
+  // close modal
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('.modal__active') || e.target.matches('#modal__close')) {
+      modal.classList.remove('modal__active');
+    }
+  });
+</script>

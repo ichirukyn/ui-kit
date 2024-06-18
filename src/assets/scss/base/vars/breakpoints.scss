@@ -1,0 +1,66 @@
+/* Container */
+:root {
+  --container_maxw: 1344px;
+  --container_margin: 0 30px;
+}
+
+$min-1920: 1920px;
+$max-1920: $min-1920 - 1px;
+$min-1440: 1440px;
+$max-1440: $min-1440 - 1px;
+$min-1280: 1280px;
+$max-1280: $min-1280 - 1px;
+$min-1024: 1024px;
+$max-1024: $min-1024 - 1px;
+$min-968: 968px;
+$max-968: $min-968 - 1px;
+$min-800: 800px;
+$max-800: $min-800 - 1px;
+$min-768: 768px;
+$max-768: $min-768 - 1px;
+$min-720: 720px;
+$max-720: $min-720 - 1px;
+$min-640: 640px;
+$max-640: $min-640 - 1px;
+$min-576: 576px;
+$max-576: $min-576 - 1px;
+$min-480: 480px;
+$max-480: $min-480 - 1px;
+$min-380: 380px;
+$max-380: $min-380 - 1px;
+$min-320: 320px;
+$max-320: $min-320 - 1px;
+
+
+$breakpoints-min: (
+  min_1920: $min-1920,
+  min_1440: $min-1440,
+  min_1280: $min-1280,
+  min_1024: $min-1024,
+  min_968: $min-968,
+  min_800: $min-800,
+  min_768: $min-768,
+  min_720: $min-720,
+  min_640: $min-640,
+  min_576: $min-576,
+  min_480: $min-480,
+  min_380: $min-380,
+  min_320: $min-320,
+);
+
+
+$breakpoints-max: (
+  max_1920: $max-1920,
+  max_1440: $max-1440,
+  max_1280: $max-1280,
+  max_1024: $max-1024,
+  max_968: $max-968,
+  max_800: $max-800,
+  max_768: $max-768,
+  max_720: $max-720,
+  max_640: $max-640,
+  max_576: $max-576,
+  max_480: $max-480,
+  max_380: $max-380,
+  max_320: $max-320,
+);

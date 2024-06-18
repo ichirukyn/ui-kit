@@ -1,0 +1,29 @@
+.divider {
+  width: 100%;
+  padding: 0 !important;
+  border-top: 1px solid var(--divider);
+
+  &.divider_25p {
+    border-color: var(--divider-25p);
+  }
+
+  &.divider_50p {
+    border-color: var(--divider-50p);
+  }
+
+  &.divider_75p {
+    border-color: var(--divider-75p);
+  }
+
+  &.multiply {
+    mix-blend-mode: multiply;
+  }
+
+  &.w_auto {
+    width: auto !important;
+  }
+
+  &.divider_hide {
+    display: none;
+  }
+}

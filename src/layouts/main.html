@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang='en'>
-<head>{{> head }}</head>
+{{> head }}
 <body>
 
 <div id='root' class='overflow-x'>
 
   {{> header_default }}
 
-
-  <div class='container container_big mt_20'>
-    <div class='section__body full-width block_column gap-100 max_640_gap40'>
+  <div class='container w_100p h_100p'>
+    <div class='block_column gap_100 w_100p'>
       {{> body }}
     </div>
   </div>
 
   {{> footer }}
 </div>
+{{> _libs}}
 <script src='./../assets/js/app.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js'></script>
 
 </body>
 </html>

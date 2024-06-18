@@ -1,10 +1,10 @@
 footer {
   position: relative;
   width: 100%;
-  background: $footer_bg;
-  padding: $footer_padding;
+  background: var(--footer-bg);
+  padding: var(--footer-padding);
 
   & * {
-    color: $footer_color-text;
+    color: var(--footer-color-text);
   }
 }

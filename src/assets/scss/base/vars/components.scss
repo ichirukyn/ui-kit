@@ -1,0 +1,101 @@
+/* Block */
+$row_gap: 30px;
+$column_gap: 10px;
+$wrap_gap: 10px 10px;
+$block_gap: 10px;
+
+
+/* Card */
+.card {
+  --card_padding: 40px;
+  --card_radius: 0;
+  --card_gap: 20px;
+  --card_bg: transparent;
+  --card_outline: 1px solid transparent;
+}
+
+/* Button */
+.button {
+  --button-font-family: #{$font_main};
+  --button-font-weight: 500;
+  --button-font-size: 16px;
+
+  --button-main-bg: var(--primary_200);
+  --button-main-color: var(--gray_700);
+  --button-main-border: 1px solid transparent;
+  --button-main-border-radius: 10px;
+  --button-main-border-color: #000;
+
+  --button-sub-bg: var(--secondary_100);
+  --button-sub-color: var(--gray_700);
+  --button-sub-border: transparent;
+  --button-sub-border-radius: 10px;
+  --button-sub-border-color: #000;
+  --button-padding: 5px 20px;
+  --button-margin: 0;
+  --button-radius: 4px;
+  --button-height: unset;
+}
+
+/* Input */
+.block_input {
+  --input-color-focus: 1px solid var(--gray_600);
+  --input-color-text: var(--gray_300);
+  --input-border: 1px solid transparent;
+  --input-bg: #F7F7F7;
+  --input-disable: #FFFFFF;
+
+  --input-padding: 5px 20px;
+  --input-margin: 0;
+  --input-radius: 4px;
+  --input-height: unset;
+
+  --textarea-margin: 5px 0 0 0;
+  --textarea-minh: 150px;
+}
+
+/* Divider */
+.divider {
+  --divider: rgba(0, 0, 0, 0.12);
+  --divider-25p: #fff;
+  --divider-50p: #fff;
+  --divider-75p: #fff;
+}
+
+/* Policy */
+.policy__wrapper {
+  --policy-color-text-bold: var(--text_color);
+  --policy-color-text: var(--text_color);
+  --policy-lh: 140%;
+  --policy-fs-main: 20px;
+  --policy-fw-main: 500;
+  --policy-fw-h: 600;
+}
+
+/* Sidebar */
+.sidebar {
+  --sidebar-bg: transparent;
+  --sidebar-maxw: 270px;
+  --sidebar-padding: 20px;
+}
+
+/* Header */
+.header {
+  --header-bg: var(--gray_700);
+  --header-padding: 0;
+  --header-color-text: var(--text_color);
+  --header-height: 70px;
+}
+
+/* Footer */
+.footer {
+  --footer-bg: transparent;
+  --footer-padding: 30px 0;
+  --footer-color-text: var(--text_color);
+}
+
+/* Table */
+.table__wrapper {
+  --table-thead-bb: transparent;
+  --table-border-radius: 16px;
+}

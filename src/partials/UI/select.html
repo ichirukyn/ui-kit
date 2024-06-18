@@ -1,0 +1,23 @@
+<div class='mt_40'>
+  <label>Custom Select</label>
+  <select
+    class='form-control'
+    name='custom-select'
+    id='custom-select'
+  >
+    <option value='Dropdown item 1'>Label One</option>
+    <option value='Dropdown item 2'>Label Two</option>
+    <option value='Dropdown item 3'>Label Three</option>
+    <option value='Dropdown item 4'>Label Four</option>
+  </select>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    new Choices('#custom-select1', {
+      allowHTML: true,
+      searchEnabled: false,
+      itemSelectText: '',
+    });
+  });
+</script>

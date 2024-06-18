@@ -130,6 +130,3 @@ dist
 
 #Temp
 src/assets/images
-src/assets/js
-src/partials
-src/pages/ui_kit.html

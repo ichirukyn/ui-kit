@@ -3,20 +3,20 @@
   position: sticky;
   top: 120px;
 
-  background: $sidebar_bg;
+  background: var(--sidebar-bg);
 
-  max-width: $sidebar_maxw;
+  max-width: var(--sidebar-maxw);
   width: 100%;
 }
 
 .sidebar {
-  max-width: $sidebar_maxw;
+  max-width: var(--sidebar-maxw);
   width: 100%;
-  padding: $sidebar_padding;
+  padding: var(--sidebar-padding);
   border-radius: 20px;
 
   & .active {
-    color: $color_active;
+    color: var(--color_active);
     font-weight: 700;
   }
 }
