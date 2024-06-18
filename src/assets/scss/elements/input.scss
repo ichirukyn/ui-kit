@@ -1,0 +1,106 @@
+.block_input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+
+  label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--gray_0);
+
+    user-select: none !important;
+  }
+
+  input, textarea {
+    max-height: var(--input-height);
+    padding: var(--input-padding);
+    margin: var(--input-margin);
+
+    border-radius: var(--input-radius);
+    border: var(--input-border);
+
+    font-style: normal;
+    font-weight: var(--text_fw);
+    font-size: var(--text_fs);
+    line-height: var(--text_lh);
+
+    resize: none;
+
+    color: var(--input-color-text);
+    background: var(--input-bg);
+
+    &:focus-visible {
+      outline: var(--input-color-focus);
+    }
+
+    &.error {
+      border-color: var(--error_100) !important;
+    }
+
+    &:disabled {
+      background: var(--input-disable);
+    }
+  }
+
+  textarea {
+    min-height: var(--textarea-minh);
+    margin: var(--textarea-margin);
+  }
+
+  input[type='time'],
+  input[type='date'] {
+    padding-right: 15px;
+  }
+
+
+  .input_row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+
+    & > div {
+      width: 100%;
+    }
+  }
+
+  .input_button {
+    position: absolute;
+    top: 0;
+
+    height: 100%;
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: all;
+
+    user-select: none;
+
+    background: var(--input-bg);
+    border-radius: 16px;
+
+    & img, & svg {
+      pointer-events: all;
+    }
+  }
+
+  .clear {
+    padding: 0 10px;
+  }
+
+  .delete {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: var(--error_0);
+  }
+
+  @import 'input/Radio';
+  @import 'input/Check';
+}

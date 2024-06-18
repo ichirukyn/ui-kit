@@ -1,30 +1,24 @@
-@import './vars';
-@import './fonts';
-@import './null';
+@import './base/var';
+@import './base/null';
+@import './base/fonts';
 
-// Mixins
+// Mixin
 @import './mixins/media';
 
-// Components
-@import './components/add';
-@import './components/base';
-@import './components/header';
-@import './components/footer';
-@import './components/main';
-@import './components/sidebar';
-@import './components/table';
-@import './components/typography';
-@import './components/media';
-@import './components/policy';
+// Page
+@import "./pages/_index";
 
-//UI
-@import './components/UI/card';
-@import './components/UI/select';
-@import './components/UI/checkbox';
-@import './components/UI/button';
-@import './components/UI/input';
-@import './components/UI/accordion';
-@import './components/UI/alert';
-@import './components/UI/modal';
-@import './components/UI/action_menu';
-@import './components/UI/progress-bar';
+// Components
+@import "./components/_index";
+
+// Widgets
+@import "./widgets/_index";
+
+// Elements
+@import "./elements/_index";
+
+// Partials --- TYT!!
+@import "./partials/_index";
+
+//@import './components/UI/action_menu';
+//@import './components/UI/progress-bar';

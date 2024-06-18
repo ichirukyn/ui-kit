@@ -1,0 +1,15 @@
+@each $breakpoint, $value in $breakpoints-min {
+  .#{$breakpoint} {
+    @media (min-width: #{$value}) {
+      display: none !important;
+    }
+  }
+}
+
+@each $breakpoint, $value in $breakpoints-max {
+  .#{$breakpoint} {
+    @media (max-width: #{$value}) {
+      display: none !important;
+    }
+  }
+}

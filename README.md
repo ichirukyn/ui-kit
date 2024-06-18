@@ -88,12 +88,13 @@ ___
 
 .opacity_40p // opacity: 0.4;
 
-.text_vBold // font-weight: 700
+.maxw_container // max-width: $container_maxw;
 ```
 
-- p -- от Англ. percent
-- vh -- view-height
-- vBold, eBold -- very bold, extra bold.
+- p - от Англ. percent
+- vh - view-height
+
+> `max` префикс к `w_` и суффикс `$container_`, из-за разных правил оформления классов и названий переменных...
 
 ---
 
@@ -128,6 +129,86 @@ ___
 `border_none` - Заменен на `b_none`
 
 `bg_primary_900` -- `bg_primary_600` - Поддержка прекращена
+
+
+---
+
+# Main
+
+___
+
+## Block
+___
+Модуль используется, для первоначанльной насройки направления блока, базовых свойст положения внутри. В модуль block, входят наиболее часто используемы наборы свойст, которые легко можно изменить с помощью `Add/flex.scss`. 
+
+> Важно! Название немного не соответсвует, так как `block_column` имеет только `flex` свойства. Оно означает что это блок, внутри которого элементы распологаются колонкой по центру, относительно ширины блока.
+
+
+```
+.block_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $column_gap;
+}
+```
+
+
+`half_wrap` Поможет выровнять все элементы в `block_wrap`, в два одинаковых столбика. `48%` необходим, для свободного расстояния между блоками. 
+
+```
+div.block_wrap.flex_1
+
+ -------
+| ----- |
+ -------
+
+div.block_wrap.half_wrap.flex_1
+ -------
+| -- -- |
+| -- -- |
+| --    |
+ -------
+
+```
+
+
+> Набор начальных свойст определяется собственным опытом, рассматриваются все предложения по оптимизации.
+
+Есть специальные блоки, для быстрого выравнивания картинок, по центру блока, по верху и т.п.
+
+```
+.image_startX {
+  display: flex;
+  justify-content: flex-start;
+  gap: $image_align;
+}
+
+.image_topY {
+  display: flex;
+  align-items: flex-start;
+  gap: $image_align;
+}
+```
+
+
+
+## Object
+___
+Этот модуль нужен для быстрого позиционирования картинки/иконки, или её настройки. Например обрезать, или растянуть на весь блок, выровнять в блоке по правому краю и т.п.
+
+
+```
+.objf_fill {
+  object-fit: fill !important;
+}
+
+.objp_top {
+  object-position: top !important;
+}
+```
+
 
 
 ---

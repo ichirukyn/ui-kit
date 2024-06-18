@@ -1,0 +1,100 @@
+/* Blocks */
+
+.block {
+  display: flex;
+  gap: 20px;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.block_row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: $row_gap;
+}
+
+.block_row-reverse {
+  flex-direction: row-reverse;
+}
+
+.block_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $column_gap;
+}
+
+.block_column-reverse {
+  flex-direction: column-reverse;
+}
+
+.block_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $wrap_gap;
+}
+
+.block {
+  display: block !important;
+}
+
+.block_inline {
+  display: inline-block !important;
+}
+
+/* align */
+
+.block_startX {
+  display: flex;
+  justify-content: flex-start;
+  gap: $block_gap;
+}
+
+.block_centerX {
+  display: flex;
+  justify-content: center;
+  gap: $block_gap;
+}
+
+.block_endX {
+  display: flex;
+  justify-content: flex-end;
+  gap: $block_gap;
+}
+
+.block_topY {
+  display: flex;
+  align-items: flex-start;
+  gap: $block_gap;
+}
+
+.block_centerY {
+  display: flex;
+  align-items: center;
+  gap: $block_gap;
+}
+
+.block_bottomY {
+  display: flex;
+  align-items: flex-end;
+  gap: $block_gap;
+}

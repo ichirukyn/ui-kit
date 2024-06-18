@@ -1,0 +1,114 @@
+$width: ();
+$width_from_100: ();
+
+// Шаг 5px до 100px
+@for $i from 1 through 20 {
+  $key: $i * 5;
+  $width: map-merge($width, ($key: $i * 5));
+  $width_from_100: map-merge($width, ($key: $i * 5));
+}
+
+// Шаг 10px от 110px до 200px
+@for $i from 11 through 20 {
+  $key: $i * 10;
+  $width: map-merge($width, ($key: $i * 10));
+}
+
+// Шаг 20px от 220px до 1200px
+@for $i from 11 through 60 {
+  $key: $i * 20;
+  $width: map-merge($width, ($key: $i * 20));
+}
+
+// Добавляем значения посередине (от 250px до 1150px)
+@for $i from 1 through 24 {
+  $key: $i * 50;
+  $width: map-merge($width, ($key: $i * 50));
+}
+
+
+
+/* width */
+
+@each $key, $value in $width {
+  .w_#{$key} {
+    width: #{$value}px !important;
+  }
+}
+
+@each $key, $value in $width_from_100 {
+  .w_#{$key}p {
+    width: #{$value}#{'%'} !important;
+  }
+}
+
+.w_unset {
+  width: unset !important;
+}
+
+.vw_100 {
+  width: 100vw !important;
+}
+
+// deprecated
+.full-width {
+  width: 100% !important;
+}
+
+// deprecated
+.full-width-v {
+  width: 100vw !important;
+}
+
+// deprecated
+.half-width {
+  width: 50% !important;
+}
+
+.fit-content {
+  min-width: fit-content;
+  max-width: fit-content;
+}
+
+
+/* max-width */
+
+@each $key, $value in $width {
+  .maxw_#{$key} {
+    max-width: #{$value}px !important;
+  }
+}
+
+@each $key, $value in $width_from_100 {
+  .maxw_#{$key}p {
+    max-width: #{$value}#{'%'} !important;
+  }
+}
+
+.maxw_container {
+  max-width: var(--container_maxw);
+  width: 100%;
+}
+
+.maxw_unset {
+  max-width: unset;
+  width: 100%;
+}
+
+.maxw_100p {
+  max-width: 100%;
+  width: 100%;
+}
+
+
+/* min-width */
+
+.minw_max-content {
+  min-width: max-content;
+}
+
+@each $key, $value in $width {
+  .minw_#{$key} {
+    min-width: #{$value}px !important;
+  }
+}

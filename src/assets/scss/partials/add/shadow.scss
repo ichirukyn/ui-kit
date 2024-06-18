@@ -1,0 +1,19 @@
+.shadow_default {
+  box-shadow: var(--shadow_default);
+}
+
+.shadow_accordion {
+  box-shadow: var(--shadow_accordion);
+}
+
+.shadow_button {
+  box-shadow: var(--shadow_button);
+}
+
+.shadow_button_hover {
+  box-shadow: var(--shadow_button_hover);
+}
+
+.shadow_unset {
+  box-shadow: none !important;
+}

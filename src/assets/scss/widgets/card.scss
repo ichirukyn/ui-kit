@@ -1,0 +1,49 @@
+.card {
+  padding: var(--card_padding);
+  border-radius: var(--card_radius);
+  gap: var(--card_gap);
+  background: var(--card_bg);
+}
+
+
+.card_gradient {
+  background: var(--secondary_0);
+
+  border-radius: var(--card_radius);
+  border: 1px solid transparent;
+
+  & .card_content {
+    border-radius: var(--card_radius);
+    background: var(--bg_body);
+  }
+}
+
+
+.card_outline {
+  background: transparent;
+  border: var(--card_outline);
+}
+
+
+.card_outline_active {
+  background: transparent;
+  border: 1px solid var(--color_active);
+}
+
+
+.card_absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: -100%;
+}
+
+.card__image {
+  overflow: hidden;
+  position: relative;
+  padding: 50px 0 50px 50px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(23.5px);
+}
