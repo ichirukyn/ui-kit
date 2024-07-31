@@ -4,7 +4,7 @@ form.form__wrapper {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  @include max-desktop_768 {
+  @include max_768 {
     gap: 15px;
   }
 
@@ -49,7 +49,7 @@ form.form__wrapper {
       padding: 2px 15px;
 
       background: rgba(236, 30, 41, 0.2);
-      color: $error_0;
+      color: var(__error_0);
       font-size: 14px;
       font-weight: 400;
       backdrop-filter: blur(3px);
@@ -61,23 +61,23 @@ form.form__wrapper {
 
     &.required > label:after {
       content: ' *';
-      color: $error_0;
+      color: var(__error_0);
     }
 
     & > input, & > textarea, & > .choices {
       width: 100%;
       padding: 10px 12px;
 
-      border: 1px solid $primary_0 !important;
+      border: 1px solid var(__primary_0) !important;
       border-radius: 4px !important;
 
       font-weight: 400 !important;
       font-size: 16px !important;
-      color: $gray_100 !important;
+      color: var(__gray_100) !important;
     }
 
     &.error input, &.error textarea {
-      border-color: $error_0 !important;
+      border-color: var(__error_0) !important;
     }
 
     & label.radio {
@@ -88,7 +88,7 @@ form.form__wrapper {
         max-height: 44px;
         padding: 10px 12px !important;
 
-        border: 2px solid $button_color-border;
+        border: 2px solid var(__button_color)-border;
         border-radius: 0 !important;
         border-color: var(--buttton-main-color);
 
@@ -115,14 +115,14 @@ form.form__wrapper {
       left: calc(100% + 20px);
       bottom: 10px;
       height: 25px;
-      @include max-desktop_1280 {
+      @include max_1280 {
         position: relative;
         left: 0 !important;
         bottom: 0 !important;
         margin-top: 15px !important;
       }
 
-      @include max-desktop_720 {
+      @include max_720 {
         height: unset !important;
       }
 
@@ -172,12 +172,12 @@ form.form__wrapper {
       width: 100%;
       padding: 10px 12px;
 
-      border: 1px solid $primary_0 !important;
+      border: 1px solid var(__primary_0) !important;
       border-radius: 4px !important;
 
       font-weight: 400 !important;
       font-size: 16px !important;
-      color: $gray_100 !important;
+      color: var(__gray_100) !important;
       text-align: center;
 
       &::-webkit-outer-spin-button,
@@ -200,7 +200,7 @@ form.form__wrapper {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    @include max-desktop_768 {
+    @include max_768 {
       flex-direction: column !important;
       gap: 15px !important;
 

@@ -15,7 +15,7 @@
     }
 
     &__wrapper {
-      @include max-375 {
+      @include max-380 {
         gap: 10px !important;
       }
     }
@@ -25,7 +25,7 @@
     }
 
     & > p {
-      color: $secondary_0;
+      color: var(--secondary_0);
 
       @include max-380 {
         font-size: 10px !important;
@@ -33,25 +33,25 @@
     }
 
     &:hover {
-      border-color: $secondary_0;
+      border-color: var(--secondary_0);
 
       & > p {
-        color: $gray_0;
+        color: var(--gray_0);
       }
     }
 
     &.tab_active {
-      border-color: $secondary_0;
+      border-color: var(--secondary_0);
 
       & > p {
-        color: $gray_0;
+        color: var(--gray_0);
       }
     }
 
     &_button {
       border: 1px solid #c1d2dc;
       padding: 15px 30px !important;
-      background: $gray_700 !important;
+      background: var(--gray_700) !important;
 
       @include max-576 {
         padding: 10px 20px !important;
@@ -66,34 +66,34 @@
 
       p {
         margin-top: 3px !important;
-        color: $secondary_0 !important;
+        color: var(--secondary_0) !important;
       }
 
       svg {
         rect {
-          fill: $secondary_0;
+          fill: var(--secondary_0);
         }
 
         circle, path {
-          stroke: $secondary_0;
+          stroke: var(--secondary_0);
         }
       }
 
       &.tab_active {
-        background: $secondary_0 !important;
+        background: var(--secondary_0) !important;
 
         p {
-          color: $gray_700 !important;
+          color: var(--gray_700) !important;
         }
 
 
         svg {
           rect {
-            fill: $gray_700;
+            fill: var(--gray_700);
           }
 
           circle, path {
-            stroke: $gray_700;
+            stroke: var(--gray_700);
           }
         }
       }
