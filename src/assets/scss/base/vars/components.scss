@@ -75,14 +75,13 @@ $block_gap: 10px;
 /* Sidebar */
 .sidebar {
   --sidebar-bg: transparent;
-  --sidebar-maxw: 270px;
+  --sidebar-maxw: 300px;
   --sidebar-padding: 20px;
 }
 
 /* Header */
 .header {
   --header-bg: var(--gray_700);
-  --header-padding: 0;
   --header-color-text: var(--text_color);
   --header-height: 70px;
 }

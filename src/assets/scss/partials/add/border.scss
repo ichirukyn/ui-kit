@@ -177,76 +177,35 @@
 
 /* border-radius */
 
-.brs_5 {
-  border-radius: 5px !important;
-}
-
-.brs_8 {
-  border-radius: 8px !important;
-}
-
-.brs_10 {
-  border-radius: 10px !important;
-}
-
-.brs_12 {
-  border-radius: 12px !important;
-}
-
-.brs_15 {
-  border-radius: 15px !important;
-}
-
-.brs_16 {
-  border-radius: 16px !important;
-}
-
-.brs_20 {
-  border-radius: 20px !important;
-}
-
-.brs_24 {
-  border-radius: 24px !important;
-}
-
-.brs_25 {
-  border-radius: 25px !important;
-}
-
-.brs_28 {
-  border-radius: 28px !important;
-}
-
-.brs_30 {
-  border-radius: 30px !important;
-}
-
-.brs_32 {
-  border-radius: 32px !important;
-}
-
-.brs_40 {
-  border-radius: 40px !important;
-}
-
-.brs_50 {
-  border-radius: 50px !important;
-}
-
-.brs_50p {
-  border-radius: 50% !important;
-}
+$border_radius: (
+  increment_20: $increment_to_20_1,
+  increment_4: $increment_step_4,
+);
 
 
-/* border-color */
-@each $color, $value in $colors {
-  .bc_#{$color} {
-    background: var(--#{$color}) !important;
+@each $k, $v in $border_radius {
+  @each $key, $value in $v {
+    .brs_#{$key} {
+      border-radius: #{$value} !important;
+    }
   }
 }
 
-/* border-hover */
+
+@each $key, $value in $increment_to_100_5 {
+  .brs_#{$key}p {
+    border-radius: #{$value}#{'%'} !important;
+  }
+}
+
+
 @each $color, $value in $colors {
+  /* border-color */
+  .bc_#{$color} {
+    background: var(--#{$color}) !important;
+  }
+
+  /* border-color-hover */
   .bc_#{$color}-h:hover {
     background: var(--#{$color}) !important;
   }

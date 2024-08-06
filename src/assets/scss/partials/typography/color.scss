@@ -1,5 +1,5 @@
-/* text-color */
 @each $color, $value in $colors {
+  /* text-color */
   .text_#{$color} {
     color: var(--#{$color}) !important;
 
@@ -7,10 +7,8 @@
       color: var(--#{$color}) !important;
     }
   }
-}
 
-/* text-color-hover */
-@each $color, $value in $colors {
+  /* text-color-hover */
   .text_#{$color}-h:hover {
     color: var(--#{$color}) !important;
 
@@ -19,3 +17,4 @@
     }
   }
 }
+

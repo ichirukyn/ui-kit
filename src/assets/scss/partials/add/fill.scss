@@ -1,12 +1,10 @@
-/* fill-color */
 @each $color, $value in $colors {
+  /* fill-color */
   .fill_#{$color} {
     fill: var(--#{$color}) !important;
   }
-}
 
-/* fill-hover */
-@each $color, $value in $colors {
+  /* fill-hover */
   .fill_#{$color}-h:hover {
     background: var(--#{$color}) !important;
   }

@@ -7,14 +7,15 @@
 
   {{> header_default }}
 
-  <div class='container w_100p h_100p'>
-    <div class='block_column gap_100 w_100p'>
-      {{> body }}
-    </div>
+  <div class='container flex_row align_start w_100p h_100p'>
+    {{> sidebar_ui}}
+
+    {{> body }}
   </div>
 
   {{> footer }}
 </div>
+
 {{> _libs}}
 <script src='./../assets/js/app.js'></script>
 

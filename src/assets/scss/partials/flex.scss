@@ -1,8 +1,37 @@
-/* Blocks */
-
-.block {
+.flex_row {
   display: flex;
-  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: $row_gap;
+}
+
+.flex_row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $column_gap;
+}
+
+.flex_column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $wrap_gap;
+}
+
+
+// Новый вариант
+.flex {
+  display: flex;
+  gap: $row_gap;
 
   align-items: flex-start;
   justify-content: center;
@@ -24,76 +53,40 @@
   }
 }
 
-.block_row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: $row_gap;
-}
 
-.block_row-reverse {
-  flex-direction: row-reverse;
-}
+/* quick align */
 
-.block_column {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: $column_gap;
-}
-
-.block_column-reverse {
-  flex-direction: column-reverse;
-}
-
-.block_wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $wrap_gap;
-}
-
-.block {
-  display: block !important;
-}
-
-.block_inline {
-  display: inline-block !important;
-}
-
-/* align */
-
-.block_startX {
+.flex_startX {
   display: flex;
   justify-content: flex-start;
   gap: $block_gap;
 }
 
-.block_centerX {
+.flex_centerX {
   display: flex;
   justify-content: center;
   gap: $block_gap;
 }
 
-.block_endX {
+.flex_endX {
   display: flex;
   justify-content: flex-end;
   gap: $block_gap;
 }
 
-.block_topY {
+.flex_topY {
   display: flex;
   align-items: flex-start;
   gap: $block_gap;
 }
 
-.block_centerY {
+.flex_centerY {
   display: flex;
   align-items: center;
   gap: $block_gap;
 }
 
-.block_bottomY {
+.flex_bottomY {
   display: flex;
   align-items: flex-end;
   gap: $block_gap;

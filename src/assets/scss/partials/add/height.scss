@@ -1,43 +1,43 @@
-$height: ();
-$height_from_100: ();
-
-// Шаг 5px до 100px
-@for $i from 1 through 20 {
-  $key: $i * 5;
-  $height: map-merge($height, ($key: $i * 5));
-  $height_from_100: map-merge($height, ($key: $i * 5));
-}
-
-// Шаг 10px от 110px до 200px
-@for $i from 11 through 20 {
-  $key: $i * 10;
-  $height: map-merge($height, ($key: $i * 10));
-}
-
-// Шаг 20px от 220px до 1200px
-@for $i from 11 through 60 {
-  $key: $i * 20;
-  $height: map-merge($height, ($key: $i * 20));
-}
-
-// Добавляем значения посередине (от 250px до 1150px)
-@for $i from 1 through 24 {
-  $key: $i * 50;
-  $height: map-merge($height, ($key: $i * 50));
-}
+$height: (
+  increment_4: $increment_step_4,
+  increment_20: $increment_to_20_1,
+  increment: $increment,
+);
 
 
-/* Height */
+@each $k, $v in $height {
+  @each $key, $value in $v {
+    /* height */
+    .h_#{$key} {
+      height: #{$value}px !important;
+    }
 
-@each $key, $value in $height {
-  .h_#{$key} {
-    height: #{$value}px !important;
+    /* max-height */
+    .maxh_#{$key} {
+      max-height: #{$value}px !important;
+    }
+
+    /* min-height */
+    .minh_#{$key} {
+      min-height: #{$value}px !important;
+    }
   }
 }
 
-@each $key, $value in $height_from_100 {
+
+@each $key, $value in $increment_to_100_5 {
   .h_#{$key}p {
     height: #{$value}#{'%'} !important;
+  }
+
+  /* max-height */
+  .maxh_#{$key}p {
+    max-height: #{$value}#{'%'} !important;
+  }
+
+  /* min-height */
+  .minh_#{$key}p {
+    min-height: #{$value}#{'%'} !important;
   }
 }
 
@@ -58,40 +58,13 @@ $height_from_100: ();
 
 /* max-height */
 
-@each $key, $value in $height {
-  .maxh_#{$key} {
-    max-height: #{$value}px !important;
-  }
-}
-
-@each $key, $value in $height_from_100 {
-  .maxh_#{$key}p {
-    max-height: #{$value}#{'%'} !important;
-  }
-}
-
 .maxh_unset {
   max-height: unset;
-}
-
-.maxh_100p {
-  max-height: 100%;
-  height: 100%;
 }
 
 
 /* min-height */
 
-.minh_100p {
-  min-height: 100% !important;
-}
-
 .minh_100vh {
   min-height: 100vh !important;
-}
-
-@each $key, $value in $height {
-  .minh_#{$key} {
-    min-height: #{$value}px !important;
-  }
 }

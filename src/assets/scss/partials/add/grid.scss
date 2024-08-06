@@ -1,0 +1,11 @@
+@each $key, $value in $increment_to_20_1 {
+  /* grid-row */
+  .span_row_#{$key} {
+    grid-row: span #{$value} !important;
+  }
+
+  /* grid-column */
+  .span_column_#{$key} {
+    grid-column: span #{$value} !important;
+  }
+}

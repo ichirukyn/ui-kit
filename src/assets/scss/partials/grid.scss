@@ -1,0 +1,22 @@
+/* grid */
+
+.grid {
+  display: grid;
+
+  /* grid - column */
+
+  @each $key, $value in $increment_to_20_1 {
+    &.column_#{$key} {
+      grid-template-columns: repeat(#{$value}, 1fr);
+    }
+  }
+
+
+  /* grid - row */
+
+  @each $key, $value in $increment_to_20_1 {
+    &.row_#{$key} {
+      grid-template-rows: repeat(#{$value}, 1fr);
+    }
+  }
+}

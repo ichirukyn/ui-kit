@@ -1,7 +1,12 @@
 /* Container */
 :root {
   --container_maxw: 1344px;
-  --container_margin: 0 30px;
+  --container_padding: 0 30px;
+}
+
+.container {
+  max-width: var(--container_maxw);
+  padding: var(--container_padding);
 }
 
 $min-1920: 1920px;

@@ -124,7 +124,7 @@ function cssWatch() {
 
 async function js() {
   const filter = (await import('gulp-filter')).default;
-  const f = filter(['**', '!_lib/**'], {restore: true})
+  const f = filter(['**', '!_lib/**'], { restore: true });
 
   return src(path.srcFile.js, { base: distPath + 'assets/js/' })
     .pipe(f)
@@ -199,7 +199,7 @@ function watchFiles() {
 }
 
 const build = gulp.series(clean, gulp.parallel(html, css, js, jsLib, images, fonts));
-const watch = gulp.parallel(build, watchFiles, serve);
+const watch = gulp.series(build, gulp.parallel(watchFiles, serve));
 
 
 /* Exports Tasks */

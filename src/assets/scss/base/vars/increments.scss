@@ -1,0 +1,48 @@
+$increment: ();
+$increment_step_4: ();
+$increment_to_20_1: ();
+$increment_to_100_5: ();
+
+// Шаг 1px (0px - 20px)
+@for $i from 0 through 20 {
+  $key: $i * 1;
+  $increment_to_20_1: map-merge($increment_to_20_1, ($key: $i * 1));
+}
+
+// Шаг 4px (24px - 96px)
+@for $i from 6 through 24 {
+  $key: $i * 4;
+  $increment_step_4: map-merge($increment_step_4, ($key: $i * 4));
+}
+
+// Шаг 5px (5px/25px - 100px)
+@for $i from 1 through 20 {
+  $key: $i * 5;
+
+  // Чтобы не было повторяющихся значений
+  @if ($key > 20) {
+    @if ($key % 4!= 0) {
+      $increment: map-merge($increment, ($key: $i * 5));
+    }
+  }
+
+  $increment_to_100_5: map-merge($increment_to_100_5, ($key: $i * 5));
+}
+
+// Шаг 10px (110px - 200px)
+@for $i from 11 through 20 {
+  $key: $i * 10;
+  $increment: map-merge($increment, ($key: $i * 10));
+}
+
+// Шаг 20px (220px - 400px)
+@for $i from 11 through 20 {
+  $key: $i * 20;
+  $increment: map-merge($increment, ($key: $i * 20));
+}
+
+$increments: (
+  increment_4: $increment_step_4,
+  increment_20: $increment_to_20_1,
+  increment: $increment,
+);
