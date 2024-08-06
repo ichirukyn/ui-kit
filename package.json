@@ -6,7 +6,8 @@
   "scripts": {
     "run": "gulp",
     "build": "gulp build",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "docs": "docsify serve docs --port 4000"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
