@@ -17,6 +17,7 @@ const notify = require('gulp-notify');
 const panini = require('panini');
 const browserSync = require('browser-sync').create();
 const del = require('del');
+const i18n = require('gulp-html-i18n');
 
 /* Paths */
 const srcPath = 'src/';
@@ -40,7 +41,7 @@ const path = {
     fonts: '/' + srcPath + 'assets/fonts/',
   },
   srcFile: {
-    html: srcPath + 'pages/**/*.html',
+    html: srcPath + 'pages/**/*.{html,hbs}',
     js: srcPath + 'assets/js/**/*.js',
     jsLib: srcPath + 'assets/js/_lib/**/*.js',
     css: srcPath + 'assets/scss/*.scss',
@@ -69,8 +70,16 @@ function serve() {
 
 function html() {
   panini.refresh();
+
   return src(path.srcFile.html, { base: srcPath })
-    .pipe(plumber())
+    .pipe(i18n({
+      langDir: srcPath + 'lang/',
+      createLangDirs: true,
+      renderEngine: 'regex',
+      defaultLang: 'ru',
+      delimiters: ['#{','}'],
+      langRegExp: /#{\s*([\w-.]+)\s*}/g
+    }))
     .pipe(panini({
       root: srcPath,
       pages: srcPath + 'pages/',

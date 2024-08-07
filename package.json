@@ -17,6 +17,7 @@
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
+    "dot-prop": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
@@ -28,11 +29,8 @@
     "gulp-sass": "^5.0.0",
     "gulp-strip-css-comments": "^2.0.0",
     "gulp-uglify": "^3.0.2",
-    "panini": "^1.7.2",
     "sass": "^1.43.4",
-    "wc-datepicker": "^0.5.0",
-    "webpack": "^5.64.3",
-    "webpack-stream": "^7.0.0"
+    "wc-datepicker": "^0.5.0"
   },
   "browserslist": [
     "last 1 version",
@@ -43,6 +41,9 @@
     "gulp-concat": "^2.6.1",
     "gulp-filter": "^9.0.1",
     "gulp-flatten": "^0.4.0",
-    "gulp-ignore": "^3.0.0"
+    "gulp-html-i18n": "^0.16.0",
+    "gulp-ignore": "^3.0.0",
+    "lodash": "^4.17.21",
+    "panini": "^1.7.2"
   }
 }
