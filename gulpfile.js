@@ -2,23 +2,26 @@
 
 const { src, dest } = require('gulp');
 const gulp = require('gulp');
+const notify = require('gulp-notify');
+
+const plumber = require('gulp-plumber');
+const replace = require('gulp-replace');
+const del = require('del');
 
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
-const cssbeautify = require('gulp-cssbeautify');
+const beautify = require('gulp-beautify');
 const sass = require('gulp-sass')(require('sass'));
 
 const uglify = require('gulp-uglify');
-const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
 const flatten = require('gulp-flatten');
-const notify = require('gulp-notify');
 
 const panini = require('panini');
-const browserSync = require('browser-sync').create();
-const del = require('del');
 const i18n = require('gulp-html-i18n');
 const embedSvg = require('gulp-embed-svg');
+
+const browserSync = require('browser-sync').create();
 
 /* Paths */
 const srcPath = 'src/';
@@ -102,7 +105,10 @@ function html() {
     }))
     .pipe(embedSvg({
       root: './dist/assets/images',
+      decodeEntities: true,
     }))
+    .pipe(replace(/<script(.*?)\/>/g, '<script$1></script>'))
+    .pipe(beautify.html({}))
     .pipe(dest(path.build.html))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -124,7 +130,7 @@ function cssWatch() {
   return src(path.srcFile.css, { base: srcPath + 'assets/scss/' })
     .pipe(plumberError('SCSS Error'))
     .pipe(sass({ includePaths: './node_modules/' }))
-    .pipe(cssbeautify())
+    .pipe(beautify.css({}))
     .pipe(dest(path.build.css))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -145,6 +151,7 @@ async function jsWatch() {
     .pipe(concat('app.js'))
     .pipe(plumberError('JS Error'))
     .pipe(dest(path.build.js))
+    .pipe(beautify.js({ indent_size: 2 }))
     .pipe(browserSync.reload({ stream: true }));
 }
 
