@@ -1,63 +1,11 @@
-@font-face {
-  font-family: '#{$font_main}';
-  src: url('#{$font_main_path}/#{$font_main}-ExtraLight.ttf') format('truetype');
-  font-weight: 200;
-  font-display: swap;
-  font-style: normal;
-}
+@use "sass:map";
 
-@font-face {
-  font-family: '#{$font_main}';
-  src: url('#{$font_main_path}/#{$font_main}-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: '#{$font_main}';
-  src: url('#{$font_main_path}/#{$font_main}-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: '#{$font_main}';
-  src: url('#{$font_main_path}/#{$font_main}-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: '#{$font_main}';
-  src: url('#{$font_main_path}/#{$font_main}-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: '#{$font_main}';
-  src: url('#{$font_main_path}/#{$font_main}-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: '#{$font_main}';
-  src: url('#{$font_main_path}/#{$font_main}-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: '#{$font_main}';
-  src: url('#{$font_main_path}/#{$font_main}-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-display: swap;
-  font-style: normal;
+@each $k, $v in $font_face_main {
+  @font-face {
+    font-family: '#{$font_main}';
+    src: url('#{$font_main_path}/#{map.get($v, "file")}') format(map.get($v, "format"));
+    font-weight: $k;
+    font-display: swap;
+    font-style: normal;
+  }
 }

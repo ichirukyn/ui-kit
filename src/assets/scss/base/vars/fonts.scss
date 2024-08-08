@@ -1,9 +1,11 @@
 //Font
 $font_main: 'Montserrat';
-$font_sub: 'unset';
-
 $font_main_path: '../fonts/Montserrat';
+$font_main_filename: 'Montserrat';
+
+$font_sub: 'unset';
 $font_sub_path: '';
+$font_sub_filename: '';
 
 
 /* Headers */
@@ -94,3 +96,39 @@ $text: (
     }
   }
 }
+
+
+$font_face_main: (
+  200: (
+    file: '#{$font_main_filename}-ExtraLight.ttf',
+    format: 'truetype',
+  ),
+  300: (
+    file: '#{$font_main_filename}-Light.ttf',
+    format: 'truetype',
+  ),
+  400: (
+    file: '#{$font_main_filename}-Regular.ttf',
+    format: 'truetype',
+  ),
+  500: (
+    file: '#{$font_main_filename}-Medium.ttf',
+    format: 'truetype',
+  ),
+  600: (
+    file: '#{$font_main_filename}-SemiBold.ttf',
+    format: 'truetype',
+  ),
+  700: (
+    file: '#{$font_main_filename}-Bold.ttf',
+    format: 'truetype',
+  ),
+  800: (
+    file: '#{$font_main_filename}-ExtraBold.ttf',
+    format: 'truetype',
+  ),
+  900: (
+    file: '#{$font_main_filename}-Black.ttf',
+    format: 'truetype',
+  ),
+);
