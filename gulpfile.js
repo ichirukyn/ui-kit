@@ -18,6 +18,7 @@ const panini = require('panini');
 const browserSync = require('browser-sync').create();
 const del = require('del');
 const i18n = require('gulp-html-i18n');
+const embedSvg = require('gulp-embed-svg');
 
 /* Paths */
 const srcPath = 'src/';
@@ -59,6 +60,16 @@ const path = {
   clean: './' + distPath,
 };
 
+const plumberError = (title) => plumber({
+  errorHandler: function(err) {
+    notify.onError({
+      title: title,
+      message: 'Error: <%= error.message %>',
+    })(err);
+    this.emit('end');
+  },
+});
+
 
 /* Tasks */
 function serve() {
@@ -72,13 +83,14 @@ function html() {
   panini.refresh();
 
   return src(path.srcFile.html, { base: srcPath })
+    .pipe(plumberError('HTML Error'))
     .pipe(i18n({
       langDir: srcPath + 'lang/',
       createLangDirs: true,
       renderEngine: 'regex',
       defaultLang: 'ru',
-      delimiters: ['#{','}'],
-      langRegExp: /#{\s*([\w-.]+)\s*}/g
+      delimiters: ['#{', '}'],
+      langRegExp: /#{\s*([\w-.]+)\s*}/g,
     }))
     .pipe(panini({
       root: srcPath,
@@ -88,67 +100,50 @@ function html() {
       helpers: srcPath + 'helpers/',
       data: srcPath + 'data/',
     }))
+    .pipe(embedSvg({
+      root: './dist/assets/images',
+    }))
     .pipe(dest(path.build.html))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function css() {
   return src(path.srcFile.css, { base: srcPath + 'assets/scss/' })
-    .pipe(plumber({
-      errorHandler: function(err) {
-        notify.onError({
-          title: 'SCSS Error',
-          message: 'Error: <%= error.message %>',
-        })(err);
-        this.emit('end');
-      },
-    }))
+    .pipe(plumberError('SCSS Error'))
     .pipe(sass({ includePaths: './node_modules/' }))
     .pipe(autoprefixer({ cascade: true }))
-    .pipe(cssbeautify())
-    .pipe(dest(path.build.css))
-    // .pipe(cssnano({
-    //   zindex: false,
-    //   discardComments: { removeAll: true },
-    // }))
+    .pipe(cssnano({
+      zindex: false,
+      discardComments: { removeAll: true },
+    }))
     .pipe(dest(path.build.css))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function cssWatch() {
   return src(path.srcFile.css, { base: srcPath + 'assets/scss/' })
-    .pipe(plumber({
-      errorHandler: function(err) {
-        notify.onError({
-          title: 'SCSS Error',
-          message: 'Error: <%= error.message %>',
-        })(err);
-        this.emit('end');
-      },
-    }))
+    .pipe(plumberError('SCSS Error'))
     .pipe(sass({ includePaths: './node_modules/' }))
+    .pipe(cssbeautify())
     .pipe(dest(path.build.css))
     .pipe(browserSync.reload({ stream: true }));
 }
 
-async function js() {
-  const filter = (await import('gulp-filter')).default;
-  const f = filter(['**', '!_lib/**'], { restore: true });
 
-  return src(path.srcFile.js, { base: distPath + 'assets/js/' })
-    .pipe(f)
+async function js() {
+  return src([path.srcFile.js, '!' + path.srcFile.jsLib], { base: path.build.js })
     .pipe(concat('app.js'))
-    .pipe(plumber({
-      errorHandler: function(err) {
-        notify.onError({
-          title: 'JS Error',
-          message: 'Error: <%= error.message %>',
-        })(err);
-        this.emit('end');
-      },
-    }))
-    // Обфускация и минификация
-    // .pipe(uglify())
+    .pipe(plumberError('JS Error'))
+    .pipe(uglify()) // Обфускация и минификация
+    .pipe(dest(path.build.js))
+    .pipe(browserSync.reload({ stream: true }));
+}
+
+
+async function jsWatch() {
+  return src([path.srcFile.js, '!' + path.srcFile.jsLib], { base: path.build.js })
+    .pipe(concat('app.js'))
+    .pipe(plumberError('JS Error'))
     .pipe(dest(path.build.js))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -159,31 +154,9 @@ function jsLib() {
     .pipe(browserSync.reload({ stream: true }));
 }
 
-function jsWatch() {
-  return src(path.srcFile.js, { base: `./${path.src.js}` })
-    .pipe(concat('app.js'))
-    .pipe(plumber({
-      errorHandler: function(err) {
-        notify.onError({
-          title: 'JS Error',
-          message: 'Error: <%= error.message %>',
-        })(err);
-        this.emit('end');
-      },
-    }))
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.reload({ stream: true }));
-}
-
-// function images() {
-//   return src(path.src.images)
-//     .pipe(dest(path.build.images))
-//     .pipe(browserSync.reload({ stream: true }));
-//// }
-
 function images() {
   return src(path.srcFile.images)
-    .pipe(flatten())
+    .pipe(flatten()) // Собирает все файлы в один каталог
     .pipe(dest(path.build.images))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -207,18 +180,11 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], jsLib);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, jsLib, images, fonts));
+const build = gulp.series(clean, images, gulp.parallel(html, css, js, jsLib, fonts));
 const watch = gulp.series(build, gulp.parallel(watchFiles, serve));
 
 
 /* Exports Tasks */
-exports.html = html;
-exports.css = css;
-exports.js = js;
-exports.jsLib = jsLib;
-exports.images = images;
-exports.fonts = fonts;
-exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
