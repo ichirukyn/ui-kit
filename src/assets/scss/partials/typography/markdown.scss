@@ -1,0 +1,76 @@
+.markdown {
+  h1, h2, h3, h4, h5, h6 {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  ul {
+    list-style-position: inside;
+  }
+
+  li {
+    margin: 10px 0;
+    line-height: 140%;
+  }
+
+  p {
+    line-height: 125%;
+    margin: 5px 0;
+  }
+
+  & > div {
+    margin: 10px 0;
+  }
+
+  blockquote {
+    font-size: inherit;
+    font-weight: inherit;
+
+    border-left: 4px solid var(--color_active);
+    color: var(--text_color);
+    margin: 10px 0;
+    padding-left: 20px;
+    line-height: 125%;
+  }
+
+  code, .code-example {
+    font-size: inherit;
+    font-weight: inherit;
+
+    background: var(--gray_600);
+    padding: 2px 5px;
+    border-radius: 2px;
+  }
+
+
+  .code-example {
+    width: 100%;
+    overflow-x: auto;
+    max-width: 100%;
+
+    span {
+      line-height: 140%;
+      font-weight: 500;
+    }
+
+    code {
+      padding: 0;
+    }
+
+    .html {
+      .hljs-tag {
+        color: #bb6819;
+
+        .hljs-title {
+          color: #bb6819;
+        }
+      }
+
+      .hljs-value {
+        color: #3f9658;
+      }
+    }
+  }
+}
+

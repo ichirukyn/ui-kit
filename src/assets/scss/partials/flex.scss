@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: $column_gap;
 }
 
@@ -59,35 +59,35 @@
 .flex_startX {
   display: flex;
   justify-content: flex-start;
-  gap: $block_gap;
+  gap: $row_gap;
 }
 
 .flex_centerX {
   display: flex;
   justify-content: center;
-  gap: $block_gap;
+  gap: $row_gap;
 }
 
 .flex_endX {
   display: flex;
   justify-content: flex-end;
-  gap: $block_gap;
+  gap: $row_gap;
 }
 
 .flex_topY {
   display: flex;
   align-items: flex-start;
-  gap: $block_gap;
+  gap: $row_gap;
 }
 
 .flex_centerY {
   display: flex;
   align-items: center;
-  gap: $block_gap;
+  gap: $row_gap;
 }
 
 .flex_bottomY {
   display: flex;
   align-items: flex-end;
-  gap: $block_gap;
+  gap: $row_gap;
 }

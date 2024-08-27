@@ -21,10 +21,10 @@ const initTabs = () => {
       tabs.forEach((tab) => {
         if (tab.getAttribute('data-tab-title') === url) {
           tabs.forEach((item) =>
-            item.getAttribute('data-tab-title') !== url ? item.classList.remove(activeTabClass) : item.classList.add(activeTabClass)
+            item.getAttribute('data-tab-title') !== url ? item.classList.remove(activeTabClass) : item.classList.add(activeTabClass),
           );
           tabsTitle.forEach((item) =>
-            item.getAttribute('data-tab-title') !== url ? item.classList.remove(activeTabClass) : item.classList.add(activeTabClass)
+            item.getAttribute('data-tab-title') !== url ? item.classList.remove(activeTabClass) : item.classList.add(activeTabClass),
           );
         }
       });
@@ -32,4 +32,7 @@ const initTabs = () => {
   });
 };
 
-initTabs();
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTabs();
+});

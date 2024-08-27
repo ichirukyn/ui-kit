@@ -1,0 +1,83 @@
+<div class='flex_column gap_10 markdown w_100p'>
+  {{#markdown}}
+
+  ### Аккордион
+
+  ##### Введение
+
+  Компонент Accordion позволяет пользователям показывать и скрывать разделы связанного контента на странице.
+
+  Accordion состоит из нескольких важных частей:
+
+  ###### `.accordion`
+  Является обёрткой всего аккордиона и является "селектором-якорем" для иницилаизации. По умолчанию без transition, но
+  можно расширить с помощью `.accordion_transition`.
+
+  > Не рекомендуется задавать `gap` текущему классу, чтобы не было проблем с отображением панели.
+
+  ###### `.accordion__open`
+  Заголовок аккордиона и по совместительству является "большой кнопкной". При необходимости можно сделать заголовок и
+  кнопку отдельно, просто класс нужно повесить на необходимый элемент.
+
+  Обычно предпологается что заголовок будет со стрелочкой, поэтому для неё есть специальные классы модификаторы, которые
+  сработают при открытии (то есть, при `.accordion__open.active`):
+
+  - `.arrow_rotate_180` - Поворачивает стрелочку на 180deg
+  - `.arrow_rotate-180` - Поворачивает стрелочку на -180deg
+  - `.arrow_mirrorX` - Отражает стрелочку по X
+  - `.arrow_mirrorY` - Отражает стрелочку по Y
+
+  ###### `.accordion__panel`
+  Внутренний контент аккордиона. По умолчанию статичный, но можно легко повесить absolute.
+
+  > Можно вкладывать аккордионы в аккордионы, главное не запутаться в 'data-acc'
+
+  ###### `data-acc=id`
+  Нужен для разграничения аккордионов на страницы и особенно для вложенных аккордионов.
+  {{/markdown}}
+
+  {{#markdown}}
+  ##### Примеры
+
+  ###### Простой аккордион
+
+
+  {{/markdown}}
+
+  <div class='accordion' data-acc='1'>
+    <div class='accordion__open block_centerY' data-acc='1'>
+      <p class='text_title'>Простой аккордион</p>
+      <svg src='arrow-up.svg' class='arrow arrow_rotate_180'></svg>
+    </div>
+
+    <div class='accordion__panel' data-acc='1'>
+      <p>any content</p>
+    </div>
+  </div>
+
+  {{#markdown}}
+  Простой пример компонента, вынесенный в униварсальный partials:
+
+  {{#> accordion_component id='2' title='Простой аккордион' arrow-style='arrow_rotate_180'}}
+  <p>any content</p>
+  {{/accordion_component}}
+
+  <p class='divider'></p>
+  {{/markdown}}
+
+  {{#markdown}}
+  ###### Аккордион со стилями
+  В этом примере мы добавили стили, но чтобы было удобнее разделять стили блока и компонента. Так же добавили плавное
+  открытие за счёт `.accordion_transition`.
+
+  <div class='bg_gray_600 p_10 brs_10 w_100p'>
+    {{#> accordion_component wrapper-style='accordion_transition w_100p' id='3' title='Аккордион'
+    arrow-style='arrow_rotate_180' outside=''}}
+    <p>any content</p>
+    {{/accordion_component}}
+  </div>
+
+  <p class='divider'></p>
+  {{/markdown}}
+
+</div>

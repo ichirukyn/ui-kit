@@ -1,0 +1,120 @@
+@use "sass:map";
+
+.form-control {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: initial;
+
+  &, & * {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  // Size Radio
+  @each $k, $v in $radio_size {
+    &.#{$k} input[type='radio'] {
+      width: var(--form-control-box-#{$k});
+      height: var(--form-control-box-#{$k});
+
+      &::before {
+        width: var(--form-control-check-#{$k});
+        height: var(--form-control-check-#{$k});
+      }
+    }
+  }
+
+
+  // Size Radio
+  @each $k, $v in $checkbox_size {
+    &.#{$k} input[type='checkbox'] {
+      width: var(--form-control-box-#{$k});
+      height: var(--form-control-box-#{$k});
+      border-radius: var(--form-control-radius-#{$k});
+
+      &::before {
+        width: var(--form-control-check-#{$k});
+        height: var(--form-control-check-#{$k});
+        border-radius: var(--form-control-radius-#{$k});
+      }
+    }
+  }
+
+  & input[type='radio'] {
+    border-radius: 50% !important;
+
+    &::before {
+      border-radius: 50% !important;
+    }
+  }
+
+  input {
+    display: flex;
+
+    width: var(--form-control-box);
+    height: var(--form-control-box);
+    border: var(--form-control-border);
+    border-radius: var(--form-control-radius);
+    background: transparent;
+    cursor: pointer;
+
+    &:checked::before {
+      transform: scale(1);
+    }
+
+    &::before {
+      content: "";
+      width: var(--form-control-check);
+      height: var(--form-control-check);
+      display: flex;
+      margin: auto;
+      border-radius: var(--form-control-radius);
+
+      transform: scale(0);
+
+      transition: var(--transition-delay) transform ease-in-out;
+    }
+  }
+
+
+  // Colors
+  @each $k, $v in $components_colors {
+    &#{$k} {
+      input {
+        &::before {
+          background: map.get($v, "main-color");
+
+          &:hover {
+            background: map.get($v, "main-color-hover");
+          }
+        }
+      }
+
+      &.border-color {
+        input {
+          border-color: map.get($v, "main-color");
+
+          &:hover {
+            border-color: map.get($v, "main-color-hover");
+          }
+        }
+
+        &.only input {
+          &::before {
+            background: var(--main-bg);
+
+            &:hover {
+              background: var(--main-bg-hover);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+label.checkbox *, label.checkbox {
+  cursor: pointer !important;
+}
+

@@ -4,20 +4,17 @@
 <body>
 
 <div id='root' class='overflow-x'>
+  {{> header_ui }}
 
-  {{> header_default }}
-
-  <div class='container flex_row align_start w_100p h_100p'>
+  <div class='section container flex_row align_start'>
     {{> sidebar_ui}}
 
     {{> body }}
   </div>
-
-  {{> footer }}
 </div>
 
 {{> _libs}}
-<script src='./../assets/js/app.js'></script>
+<script src='{{root}}assets/js/app.js'></script>
 
 </body>
 </html>

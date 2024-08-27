@@ -1,33 +1,11 @@
 /* Link */
 a {
-  user-select: none;
   white-space: normal;
   color: var(--link_color);
   background-color: transparent;
-  cursor: pointer;
   text-decoration: none;
 
   &:hover {
     color: var(--link_color_hover);
   }
-}
-
-.td_none {
-  text-decoration: none !important;
-}
-
-.td_underline {
-  text-decoration: underline !important;
-}
-
-.td_unset {
-  text-decoration: unset !important;
-}
-
-.td_dotted {
-  text-decoration-style: dotted !important;
-}
-
-.td_dashed {
-  text-decoration-style: dashed !important;
 }

@@ -202,11 +202,11 @@ $border_radius: (
 @each $color, $value in $colors {
   /* border-color */
   .bc_#{$color} {
-    background: var(--#{$color}) !important;
+    border-color: var(--#{$color}) !important;
   }
 
   /* border-color-hover */
   .bc_#{$color}-h:hover {
-    background: var(--#{$color}) !important;
+    border-color: var(--#{$color}) !important;
   }
 }

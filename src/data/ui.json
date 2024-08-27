@@ -1,0 +1,51 @@
+{
+  "elements": [
+    {
+      "key": "button",
+      "title": "Кнопки",
+      "url": "/pages/ui/elements/button.html"
+    },
+    {
+      "key": "radio",
+      "title": "Управляемые кнопки",
+      "url": "/pages/ui/elements/form-control.html"
+    },
+    {
+      "key": "input",
+      "title": "Текстовое поле",
+      "url": "/pages/ui/elements/input.html"
+    },
+    {
+      "key": "switch",
+      "title": "Переключатель",
+      "url": "/pages/ui/elements/switch.html"
+    },
+    {
+      "key": "toggle",
+      "title": "Тумблеры",
+      "url": "/pages/ui/elements/toggle.html"
+    },
+    {
+      "key": "select",
+      "title": "Выпадающий список",
+      "url": "/pages/ui/elements/select.html"
+    },
+    {
+      "key": "badge",
+      "title": "Значки",
+      "url": "/pages/ui/elements/badge.html"
+    },
+    {
+      "key": "divider",
+      "title": "Разделитель",
+      "url": "/pages/ui/elements/divider.html"
+    }
+  ],
+  "components": [
+    {
+      "key": "accordion",
+      "title": "Аккордион",
+      "url": "/pages/ui/components/accordion.html"
+    }
+  ]
+}

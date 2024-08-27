@@ -1,0 +1,87 @@
+---
+layout: ui-kit
+title: Выпадающий список
+---
+
+<div class='content markdown'>
+  {{#markdown}}
+  ###### Немного о реализации выпадающих списков
+
+  Для селекторов используется библиотека `choices js`, на данный момент она выглядит наиболее удобной в плане подгонки
+  стилей, а так же по своим возможностям.
+
+  > Но это не значит, что нельзя использовать любой другой.
+
+  В отличии от других элементов, у выпадающего списка 2 варианта добавления цветов.
+  `sub` -- Для постоянного цвета бордера и выбранных элементов мультиселектора
+  `sub-active` -- Модификатор, срабатывает при открытии выпадающего списка
+
+  Так как `choices js` инициализирует всё вокруг `select`, то для прокидывания стилей в "родителя" используется
+  небольшой костыль в виде `data-style=''`
+
+  ###### Примеры
+
+  <select class='select'>
+    <option selected>0</option>
+    <option>1</option>
+    <option>2</option>
+  </select>
+
+  Пример работы модификатора:
+  <select class='select' data-style='sub-active'>
+    <option selected>0</option>
+    <option>1</option>
+    <option>2</option>
+  </select>
+
+  Постоянный цвет, удобно для ошибок:
+  <select class='select' data-style='error'>
+    <option selected>0</option>
+    <option>1</option>
+    <option>2</option>
+  </select>
+
+
+  ###### Мультивыбор
+  <select multiple class='select'>
+    <option selected>Для дизайнеров-гиков, есть вот такой селектор.. Здесь value выступает как href а option в виде
+      ссылки.. (Мало ли,
+    </option>
+    <option>Для дизайнеров-гиков, есть вот такой селектор.. Здесь value выступает как href а option в виде ссылки..
+      (Мало ли,
+    </option>
+    <option>2</option>
+  </select>
+
+
+  ###### Размеры
+  <select class='select' data-style='lg'>
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+  </select>
+  <select class='select' data-style='md'>
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+  </select>
+  <select class='select' data-style='sm'>
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+  </select>
+
+
+  ###### Селектор для ссылок..
+  Для дизайнеров-гиков, есть вот такой селектор.. Здесь value выступает как href а option в виде ссылки.. (Мало ли,
+  кому-то
+  ещё понадобится..)
+
+  <select class='select' multiple data-link='true'>
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+  </select>
+
+  {{/markdown}}
+</div>

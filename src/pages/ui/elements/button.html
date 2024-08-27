@@ -1,0 +1,57 @@
+---
+layout: ui-kit
+title: Кнопки
+---
+
+<div class='content markdown'>
+  {{#markdown}}
+  ###### Простой пример
+  <div>
+    <button class='button'>Обычная кнопка</button>
+    <a href='#' class='button outline'>Ссылка как кнопка</a>
+    <span class='button text'>Текст косит под текстовую кнопку</span>
+  </div>
+
+  ###### Второстепенные цвета
+  <div>
+    <button class='button sub'>Дефолт</button>
+    <button class='button sub outline'>Обводка</button>
+    <button class='button sub text'>Текст</button>
+  </div>
+
+  ###### Заблокированные кнопки
+  <div>
+    <button class='button disabled'>Дефолт</button>
+    <button class='button disabled outline'>Обводка</button>
+    <button class='button disabled text'>Текст</button>
+  </div>
+
+  ###### Размеры
+  <div>
+    <button class='button lg'>large</button>
+    <button class='button md'>medium</button>
+    <button class='button sm'>small</button>
+  </div>
+
+  ###### Иконки
+  Чтобы иконки и текст правильно выравнивался по умолчанию (без использования display: flex), нужно обязательно текст
+  обернуть в `span`.
+
+  <div>
+    <button class='button'>
+      <svg src='clock.svg' class='text_gray_700'></svg>
+      <span>text</span>
+    </button>
+    <button class='button'>
+      <span>text</span>
+      <svg src='clock.svg' class='text_gray_700'></svg>
+    </button>
+    <button class='button'>
+      <svg src='clock.svg' class='text_gray_700'></svg>
+      <span>text</span>
+      <svg src='clock.svg' class='text_gray_700'></svg>
+    </button>
+  </div>
+
+  {{/markdown}}
+</div>

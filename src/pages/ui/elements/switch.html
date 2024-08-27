@@ -1,0 +1,64 @@
+---
+layout: ui-kit
+title: Переключатель
+---
+
+<div class='content markdown'>
+  {{#markdown}}
+
+  ###### Просто переключатель
+  <div class='switch'>
+    <button class='switch__track'></button>
+  </div>
+
+  <div class='switch'>
+    <input type='radio' class='switch__track' name='name'>
+  </div>
+  <div class='switch'>
+    <input type='radio' class='switch__track' name='name'>
+  </div>
+  <div class='switch'>
+    <input type='radio' class='switch__track' name='name'>
+  </div>
+
+  ###### Переключатель с привязкой к input
+
+  <div class='switch flex_centerY gap_10'>
+    <button type='button' role='switch' class='switch__track'>
+      <input type='checkbox' class='hidden' name='name'>
+    </button>
+  </div>
+
+
+  ###### Группа переключателей с привязкой к input
+
+  <div>
+    <div class='switch flex_centerY gap_10'>
+      <button type='button' role='switch' class='switch__track'>
+        <input type='radion' class='hidden' name='name_2'>
+      </button>
+      <label class='text_note m_0 word-break'>С текстом</label>
+    </div>
+    <div class='switch flex_centerY gap_10'>
+      <button type='button' role='switch' class='switch__track'>
+        <input type='radion' class='hidden' name='name_2'>
+      </button>
+      <label class='text_note m_0 word-break'>С текстом</label>
+    </div>
+    <div class='switch flex_centerY gap_10'>
+      <button type='button' role='switch' class='switch__track'>
+        <input type='radion' class='hidden' name='name_2'>
+      </button>
+      <label class='text_note m_0 word-break'>С текстом</label>
+    </div>
+  </div>
+
+  ###### Переключатель с текстом
+
+
+  ###### Цвет
+
+  ###### Размер
+  {{/markdown}}
+
+</div>

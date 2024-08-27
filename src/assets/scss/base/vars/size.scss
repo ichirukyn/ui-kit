@@ -1,0 +1,91 @@
+$size_map: (
+  lg: lg,
+  md: md,
+  sm: sm,
+);
+
+$button_size: (
+  lg: (
+    padding: 10px 25px,
+    height: var(--button-height),
+    border: var(--button-border),
+    border-radius: var(--button-border-radius),
+    font-size: var(--button-font-weight),
+    font-weight: var(--button-font-size),
+  ),
+  md: (
+    padding: 5px 20px,
+    height: var(--button-height),
+    border: var(--button-border),
+    border-radius: var(--button-border-radius),
+    font-size: var(--button-font-weight),
+    font-weight: var(--button-font-size),
+  ),
+  sm: (
+    padding: 5px 10px,
+    height: var(--button-height),
+    border: var(--button-border),
+    border-radius: var(--button-border-radius),
+    font-size: var(--button-font-weight),
+    font-weight: var(--button-font-size),
+  ),
+);
+
+$checkbox_size: (
+  lg: (
+    form-control-box: 18px,
+    form-control-check: 12px,
+    form-control-radius: var(--form-control-radius),
+  ),
+  md: (
+    form-control-box: 16px,
+    form-control-check: 10px,
+    form-control-radius: var(--form-control-radius),
+  ),
+  sm: (
+    form-control-box: 14px,
+    form-control-check: 8px,
+    form-control-radius: var(--form-control-radius),
+  ),
+);
+
+
+$radio_size: (
+  lg: (
+    form-control-box: 18px,
+    form-control-check: 12px,
+  ),
+  md: (
+    form-control-box: 16px,
+    form-control-check: 10px,
+  ),
+  sm: (
+    form-control-box: 14px,
+    form-control-check: 8px,
+  ),
+);
+
+$divider_size: (
+  lg: 1px,
+  md: 2px,
+  sm: 3px,
+);
+
+
+$select_size: (
+  lg: (
+    select-height: var(--select-container-height),
+    select-padding: 15px,
+    select-radius: 4px,
+  ),
+  md: (
+    select-height: var(--select-container-height),
+    select-padding: 10px,
+    select-radius: 4px,
+  ),
+  sm: (
+    select-height: var(--select-container-height),
+    select-padding: 5px,
+    select-radius: 4px,
+  ),
+);

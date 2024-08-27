@@ -1,26 +1,27 @@
 $colors: (
   // gray
-  gray_0: #000,
-  gray_100: #2F2F2F,
-  gray_200: #3D3D3D,
-  gray_300: #808080,
-  gray_400: #889094,
-  gray_500: #F3F7F8,
-  gray_600: #F7F9FB,
-  gray_700: #ffffff,
+  gray_0: #000000,
+  gray_100: #101010,
+  gray_200: #484848,
+  gray_300: #606060,
+  gray_400: #808080,
+  gray_500: #D0D0D0,
+  gray_600: #EBEBEB,
+  gray_650: #F5F5F5,
+  gray_700: #FFFFFF,
   // primary
-  primary_0: #C1D1DC,
-  primary_100: #9BB7C7,
-  primary_200: #097fed,
+  primary_0: #2276F6,
+  primary_100: #3D8AFF,
+  primary_200: #C6DCFF,
   // secondary
-  secondary_0: #C1D1DC,
-  secondary_100: #9BB7C7,
-  secondary_200: #097fed,
+  secondary_0: #B75BF0,
+  secondary_100: #b773e5,
+  secondary_200: #C6DCFF,
   // func-color
-  color_active: #3c3e49,
-  color_active_hover: #3c3e49,
-  color_disable: #3c3e49,
-  color_disable_hover: #3c3e49,
+  color_active: #3D8AFF,
+  color_active_hover: #2276F6,
+  color_disable: #00000042,
+  color_disable_hover: #0000001f,
   // others-color
   error_0: #DA363E,
   error_100: #FF5372,
@@ -36,9 +37,8 @@ $colors: (
   warning_200: #FFF5E4,
   // base colors
   bg_body: #f0f0f0,
-  text_color: #f0f0f0,
-  link_color: #097fed,
-  link_color_hover: #097fed,
+  link_color: #3D8AFF,
+  link_color_hover: #2276F6,
 );
 
 
@@ -48,4 +48,49 @@ $colors: (
   }
 }
 
+
+$components_colors: (
+  '': (
+    main-color: var(--main-bg),
+    main-color-hover: var(--main-bg-hover),
+    sub-color: var(--main-color),
+    sub-color-hover: var(--main-color-hover),
+  ),
+  '.sub': (
+    main-color: var(--sub-bg),
+    main-color-hover: var(--sub-bg-hover),
+    sub-color: var(--sub-color),
+    sub-color-hover: var(--sub-color-hover),
+  ),
+  '.error': (
+    main-color: var(--error_0),
+    main-color-hover: var(--error_100),
+    sub-color: var(--gray_700),
+    sub-color-hover: var(--gray_700),
+  ),
+  '.success': (
+    main-color: var(--success_0),
+    main-color-hover: var(--success_100),
+    sub-color: var(--gray_700),
+    sub-color-hover: var(--gray_700),
+  ),
+  '.info': (
+    main-color: var(--info_0),
+    main-color-hover: var(--info_100),
+    sub-color: var(--gray_700),
+    sub-color-hover: var(--gray_700),
+  ),
+  '.warning': (
+    main-color: var(--warning_0),
+    main-color-hover: var(--warning_100),
+    sub-color: var(--gray_700),
+    sub-color-hover: var(--gray_700),
+  ),
+  '.disabled': (
+    main-color: var(--color_disable),
+    main-color-hover: var(--color_disable_hover),
+    sub-color: var(--gray_700),
+    sub-color-hover: var(--gray_700),
+  )
+);
 

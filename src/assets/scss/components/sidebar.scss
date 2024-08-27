@@ -13,12 +13,32 @@
   max-width: var(--sidebar-maxw);
   width: 100%;
   padding: var(--sidebar-padding);
-  border-radius: 20px;
+  border-radius: var(--sidebar-radius);
 
-  height: 100%;
+  height: 100vh;
+  border-right: 1px solid var(--gray_600);
+
+
+  ul ul {
+    margin-left: 10px;
+  }
+
+  ul {
+    list-style: none !important;
+    margin-bottom: 5px;
+  }
+
+  li, a {
+    line-height: 24px;
+    padding: 2px 0 2px 5px;
+  }
 
   & .active {
-    color: var(--color_active);
-    font-weight: 700;
+    border-right: 2px solid var(--color_active);
+
+    & * {
+      color: var(--gray_0);
+      font-weight: 500;
+    }
   }
 }

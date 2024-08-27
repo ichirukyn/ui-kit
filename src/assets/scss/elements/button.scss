@@ -1,147 +1,106 @@
+@use "sass:map";
+
+
+// Main style
 .button {
   height: var(--button-height);
+
+  margin: var(--button-margin);
+  padding: var(--button-padding);
 
   font-family: var(--button-font-family);
   font-weight: var(--button-font-weight);
   font-size: var(--button-font-size);
   line-height: normal;
-
   text-align: center;
 
-  padding: var(--button-padding);
-
-  border: var(--button-main-border);
-  border-radius: var(--button-radius);
-
-  color: var(--button-main-color);
-  background: var(--button-main-bg);
+  border: var(--button-border);
+  border-radius: var(--button-border-radius);
 
   user-select: none;
   -webkit-user-drag: none;
 
-  & * {
-    color: var(--button-main-color);
+  transition: 0.3s ease;
+
+  &:not([style*="display: flex"]) * {
+    vertical-align: middle;
+    margin: var(--button-icon-margin);
   }
 
-  &:hover {
-    opacity: 0.9;
-    color: var(--button-main-color);
-    background: var(--button-main-bg) !important;
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+  }
 
-    & * {
-      color: var(--button-main-color);
+  // Size
+  @each $k, $v in $size_map {
+    &.#{$k} {
+      height: var(--button-#{$k}-height);
+      padding: var(--button-#{$k}-padding);
+      border: var(--button-#{$k}-border);
+      border-radius: var(--button-#{$k}-border-radius);
+      font-size: var(--button-#{$k}-font-size);
+      font-weight: var(--button-#{$k}-font-weight);
     }
   }
+}
 
 
-  &_sub {
-    border: 1px solid var(--button-sub-border) !important;
-    color: var(--button-sub-color);
-    background: var(--button-sub-bg) !important;
-
-    & * {
-      color: var(--button-sub-color);
-    }
-  }
-
-
-  &.button_outline_transparent {
-    border-color: transparent;
-    color: var(--button-main-color);
-    background: transparent;
+// Colors
+@each $k, $v in $components_colors {
+  .button#{$k} {
+    background: map.get($v, "main-color");
+    color: map.get($v, "sub-color");
 
     & * {
-      color: var(--button-main-color);
-    }
-  }
-
-
-  &.button_outline, &.button_outline * {
-    border-color: var(--button-main-border-color);
-    color: var(--button-main-color) active !important;
-    background: transparent;
-
-    & * {
-      color: var(--button-main-color) !important;
+      color: map.get($v, "sub-color");
     }
 
     &:hover {
-      border: var(--button-main-border);
-      background: var(--button-main-bg) !important;
-      color: var(--button-main-color) !important;
-    }
-  }
+      background: map.get($v, "main-color-hover");
+      color: map.get($v, "sub-color-hover");
 
-
-  &.button_round {
-    border-width: 1px !important;
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0 !important;
-
-    &_small {
-      min-width: 22px !important;
-      max-width: 22px !important;
-      height: 22px !important;
-
-      & svg {
-        width: 8px;
-        height: 5px;
+      & * {
+        color: map.get($v, "sub-color");
       }
     }
 
-    &_average {
-      min-width: 38px !important;
-      max-width: 38px !important;
-      height: 38px !important;
+    &.outline {
+      background: map.get($v, "sub-color");
+      color: map.get($v, "main-color");
+      border-color: map.get($v, "main-color");
 
-      & svg {
-        width: 12px;
-        height: 10px;
+      & * {
+        color: map.get($v, "sub-color");
+      }
+
+      &:hover {
+        background: map.get($v, "sub-color-hover");
+        color: map.get($v, "main-color-hover");
+        border-color: map.get($v, "main-color-hover");
+
+        & * {
+          color: map.get($v, "sub-color");
+        }
       }
     }
-  }
 
-  &.error {
-    border-color: var(--error_0) !important;
-  }
+    &.text {
+      background: unset;
+      color: map.get($v, "main-color");
 
-  &:active {
-    box-shadow: inset 0 3px 5px rgb(0 0 0 / 13%);
-  }
+      & * {
+        color: map.get($v, "sub-color");
+      }
 
+      &:hover {
+        background: map.get($v, "sub-color-hover");
+        color: map.get($v, "main-color-hover");
 
-  &:disabled {
-    background: var(--color_disable);
-  }
-
-  transition: 0.3s ease;
-}
-
-.button_active_wrapper:hover {
-  * {
-    transition: 0.3s ease !important;
-  }
-
-  .button {
-    color: var(--button-main-color);
-    background: var(--button-main-bg) !important;
-
-    & * {
-      color: var(--button-main-color);
-    }
-  }
-
-  .button.button_outline {
-    background: var(--button-main-bg) !important;
-    color: var(--button-main-color) !important;
-
-    & * {
-      color: var(--button-main-color) !important;
+        & * {
+          color: map.get($v, "sub-color");
+        }
+      }
     }
   }
 }

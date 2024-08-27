@@ -6,6 +6,6 @@
 
   /* fill-hover */
   .fill_#{$color}-h:hover {
-    background: var(--#{$color}) !important;
+    fill: var(--#{$color}) !important;
   }
 }

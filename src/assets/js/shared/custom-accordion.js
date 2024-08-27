@@ -47,16 +47,17 @@ const initAccordions = () => {
     const panel = getAccordionPanel(accordion);
     if (!panel) return;
 
+    const height = panel.scrollHeight + 1;
 
     // Расчет времени анимации с использованием логарифмической функции
-    const animationTime = Math.log(panel.scrollHeight) / Math.log(animationSpeed);
+    const animationTime = Math.log(height) / Math.log(animationSpeed);
     panel.style.transition = `max-height ${animationTime}s ease-in-out !important`;
 
     if (panel.className.includes('active')) {
       panel.style.transition = 'none';
       console.log('panel_height', panel.scrollHeight);
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-      panel.style.maxHeight = panel.scrollHeight + 'px';
+      panel.style.maxHeight = height + 'px';
+      panel.style.maxHeight = height + 'px';
 
     } else {
       if (panel.className.includes('fade')) panel.style.display = 'none';
@@ -79,8 +80,12 @@ const initAccordions = () => {
         accordionOpen = accordion;
       }
 
+      if (accordionOpen.getAttribute('data-acc') !== e.target.getAttribute('data-acc')) return;
+
+      const height = panel.scrollHeight + 1;
+
       // Расчет времени анимации с использованием логарифмической функции
-      const animationTime = Math.log(panel.scrollHeight) / Math.log(animationSpeed);
+      const animationTime = Math.log(height) / Math.log(animationSpeed);
       panel.style.transition = `max-height ${animationTime}s ease-in-out !important`;
 
 
@@ -100,7 +105,7 @@ const initAccordions = () => {
         accordionOpen.classList.add('active');
         panel.classList.add('active');
         const paddingBottom = Number(window.getComputedStyle(panel).paddingBottom.split('px')[0] || '0');
-        panel.style.maxHeight = panel.scrollHeight + paddingBottom + 'px';
+        panel.style.maxHeight = height + paddingBottom + 'px';
       }
     });
   };
@@ -116,4 +121,6 @@ const initAccordions = () => {
   });
 };
 
-initAccordions();
+document.addEventListener('DOMContentLoaded', () => {
+  initAccordions();
+});

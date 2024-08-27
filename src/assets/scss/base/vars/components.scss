@@ -1,9 +1,14 @@
+@use "sass:map";
+
 /* Block */
 $row_gap: 30px;
 $column_gap: 10px;
 $wrap_gap: 10px 10px;
-$block_gap: 10px;
 
+
+:root {
+  --transition-delay: 0.3s;
+}
 
 /* Card */
 .card {
@@ -16,25 +21,64 @@ $block_gap: 10px;
 
 /* Button */
 .button {
+  --button-height: unset;
+  --button-padding: 5px 20px;
+  --button-margin: 0;
+  --button-icon-margin: 0 2px;
+
   --button-font-family: #{$font_main};
   --button-font-weight: 500;
   --button-font-size: 16px;
 
-  --button-main-bg: var(--primary_200);
-  --button-main-color: var(--gray_700);
-  --button-main-border: 1px solid transparent;
-  --button-main-border-radius: 10px;
-  --button-main-border-color: #000;
+  --button-border: 1px solid transparent;
+  --button-border-radius: 4px;
 
-  --button-sub-bg: var(--secondary_100);
-  --button-sub-color: var(--gray_700);
-  --button-sub-border: transparent;
-  --button-sub-border-radius: 10px;
-  --button-sub-border-color: #000;
-  --button-padding: 5px 20px;
-  --button-margin: 0;
-  --button-radius: 4px;
-  --button-height: unset;
+
+  --main-color: var(--gray_700);
+  --main-color-hover: var(--gray_700);
+  --main-bg: var(--primary_100);
+  --main-bg-hover: var(--primary_0);
+
+  --sub-color: var(--gray_700);
+  --sub-color-hover: var(--gray_700);
+  --sub-bg: var(--secondary_100);
+  --sub-bg-hover: var(--secondary_0);
+
+
+  @each $k, $v in $button_size {
+    --button-#{$k}-padding: #{map.get($v, "padding")};
+    --button-#{$k}-height: #{map.get($v, "height")};
+    --button-#{$k}-border: #{map.get($v, "border")};
+    --button-#{$k}-border-radius: #{map.get($v, "border-radius")};
+    --button-#{$k}-font-size: #{map.get($v, "font-size")};
+    --button-#{$k}-font-weight: #{map.get($v, "font-weight")};
+  }
+}
+
+.select {
+  --select-container-radius: 4px;
+  --select-dropdown-radius: 4px;
+  --select-badge-radius: 4px;
+
+  --select-container-padding: 5px 10px;
+  --select-container-height: 40px;
+
+  --main-color: var(--gray_700);
+  --main-color-hover: var(--gray_700);
+  --main-bg: var(--primary_100);
+  --main-bg-hover: var(--primary_0);
+
+  --sub-color: var(--gray_700);
+  --sub-color-hover: var(--gray_700);
+  --sub-bg: var(--secondary_100);
+  --sub-bg-hover: var(--secondary_0);
+
+
+  @each $k, $v in $select_size {
+    --select-#{$k}-height: #{map.get($v, "select-height")};
+    --select-#{$k}-padding: #{map.get($v, "select-padding")};
+    --select-#{$k}-radius: #{map.get($v, "select-radius")};
+  }
 }
 
 /* Input */
@@ -57,9 +101,9 @@ $block_gap: 10px;
 /* Divider */
 .divider {
   --divider: rgba(0, 0, 0, 0.12);
-  --divider-25p: #fff;
-  --divider-50p: #fff;
-  --divider-75p: #fff;
+  --divider-75p: rgba(0, 0, 0, 0.09);
+  --divider-50p: rgba(0, 0, 0, 0.06);
+  --divider-25p: rgba(0, 0, 0, 0.03);
 }
 
 /* Policy */
@@ -75,8 +119,9 @@ $block_gap: 10px;
 /* Sidebar */
 .sidebar {
   --sidebar-bg: transparent;
-  --sidebar-maxw: 300px;
-  --sidebar-padding: 20px;
+  --sidebar-maxw: 270px;
+  --sidebar-padding: 0 0 20px 0;
+  --sidebar-radius: 0px;
 }
 
 /* Header */
@@ -97,4 +142,26 @@ $block_gap: 10px;
 .table__wrapper {
   --table-thead-bb: transparent;
   --table-border-radius: 16px;
+}
+
+
+.form-control {
+  --form-control-box: 16px;
+  --form-control-check: 10px;
+  --form-control-radius: 2px;
+  --form-control-border: 1px solid;
+
+
+  --main-bg: var(--primary_100);
+  --main-bg-hover: var(--primary_0);
+
+  --sub-bg: var(--secondary_100);
+  --sub-bg-hover: var(--secondary_0);
+
+
+  @each $k, $v in $checkbox_size {
+    --form-control-box-#{$k}: #{map.get($v, "form-control-box")};
+    --form-control-check-#{$k}: #{map.get($v, "form-control-check")};
+    --form-control-radius-#{$k}: #{map.get($v, "form-control-radius")};
+  }
 }

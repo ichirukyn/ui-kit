@@ -3,25 +3,18 @@
 {{> head }}
 <body>
 
-<div id='root' class='gap-40 max_1024_gap0'>
+<div id='root' class='overflow-x'>
+  {{> header }}
 
-  {{> header_default }}
+  <div class='section container flex_row align_start'>
+    {{> sidebar_ui}}
 
-  <div class='container flex_column align_center '>
-    <div class='breadcrumbs full-width max_1024'>
-      <p>Главная > Личный кабинет > Личные данные</p>
-    </div>
-
-    <div class='section section__side max_1024_column'>
-      {{> sidebar }}
-      {{> body }}
-    </div>
+    {{> body }}
   </div>
-
-  {{> footer }}
 </div>
+
 {{> _libs}}
-<script src='./../assets/js/app.js'></script>
+<script src='{{root}}assets/js/app.js'></script>
 
 </body>
 </html>

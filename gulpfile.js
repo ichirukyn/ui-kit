@@ -51,6 +51,8 @@ const path = {
     css: srcPath + 'assets/scss/*.scss',
     images: srcPath + 'assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}',
     fonts: srcPath + 'assets/fonts/**/*.{eot,woff,woff2,ttf,svg}',
+    data: srcPath + 'data/**/*.{yml,json}',
+    lang: srcPath + 'lang/**/*.{yml,json}',
   },
   watch: {
     html: srcPath + '**/*.html',
@@ -179,7 +181,7 @@ function clean() {
 }
 
 function watchFiles() {
-  gulp.watch([path.watch.html], html);
+  gulp.watch([path.watch.html, path.srcFile.data, path.srcFile.lang], html);
   gulp.watch([path.watch.css], cssWatch);
   gulp.watch([path.watch.js], jsWatch);
   gulp.watch([path.watch.images], images);

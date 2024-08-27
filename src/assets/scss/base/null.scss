@@ -6,11 +6,9 @@
 
   margin: 0;
   padding: 0;
-  list-style: none;
   text-decoration: none;
   border: none;
   color: var(--text_color);
-  transition: 0.3s;
   font-family: var(--font_main);
   font-display: fallback;
   font-size: var(--text_fs);
@@ -33,6 +31,7 @@
   height: 20px;
   -webkit-overflow-scrolling: touch;
 }
+
 /* Scroll - end */
 
 *, *:before, *:after {
@@ -91,10 +90,6 @@ a, a:visited {
 
 a:hover {
   text-decoration: none;
-}
-
-ul li {
-  list-style: none;
 }
 
 img {

@@ -1,8 +1,22 @@
 <div class='sidebar'>
+  <!-- Можно вложить each в each при необходимости -->
   <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
+    <li>
+      Элементы:
+      <ul>
+        {{#each ui.elements}}
+        <li class='{{#ifpage key}}active{{/ifpage}}'><a href='{{url}}'>{{title}}</a></li>
+        {{/each}}
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      Компоненты:
+      <ul>
+        {{#each ui.components}}
+        <li class='{{#ifpage key}}active{{/ifpage}}'><a href='{{url}}'>{{title}}</a></li>
+        {{/each}}
+      </ul>
   </ul>
 </div>

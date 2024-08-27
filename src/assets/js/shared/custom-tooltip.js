@@ -13,23 +13,29 @@ TooltipContents.map(({ id, content }) => {
   });
 });
 
-const tooltips = document.querySelectorAll('.tooltip__wrapper');
+const initTooltips = () => {
+  const tooltips = document.querySelectorAll('.tooltip__wrapper');
 
-tooltips.forEach((e) => {
-  let text = e.querySelector('.tooltip__text')?.textContent?.trim() || '';
-  let content = e.querySelector('.tooltip__content')?.innerHTML;
+  tooltips.forEach((e) => {
+    let text = e.querySelector('.tooltip__text')?.textContent?.trim() || '';
+    let content = e.querySelector('.tooltip__content')?.innerHTML;
 
-  let arrow = e.getAttribute('data-arrow');
-  let trigger = e.getAttribute('data-trigger') || undefined;
-  let placement = e.getAttribute('data-placement') || 'top';
+    let arrow = e.getAttribute('data-arrow');
+    let trigger = e.getAttribute('data-trigger') || undefined;
+    let placement = e.getAttribute('data-placement') || 'top';
 
-  tippy(`#${e.id}`, {
-    theme: 'light',
-    content: content ? content : text,
-    arrow: arrow ? Boolean(arrow) : false,
-    trigger: trigger,
-    placement: placement,
-    allowHTML: true,
-    interactive: true,
+    tippy(`#${e.id}`, {
+      theme: 'light',
+      content: content ? content : text,
+      arrow: arrow ? Boolean(arrow) : false,
+      trigger: trigger,
+      placement: placement,
+      allowHTML: true,
+      interactive: true,
+    });
   });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTooltips();
 });

@@ -23,4 +23,6 @@ function hideBlock() {
 }
 
 // Инициализация функции, когда страница загрузится
-hideBlock();
+document.addEventListener('DOMContentLoaded', () => {
+  hideBlock();
+});

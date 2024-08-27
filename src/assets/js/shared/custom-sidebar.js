@@ -20,4 +20,7 @@ const initSidebar = () => {
   document.addEventListener('click', menuHandler);
 };
 
-initSidebar();
+
+document.addEventListener('DOMContentLoaded', () => {
+  initSidebar();
+});
