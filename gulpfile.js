@@ -55,7 +55,7 @@ const path = {
     lang: srcPath + 'lang/**/*.{yml,json}',
   },
   watch: {
-    html: srcPath + '**/*.html',
+    html: srcPath + '**/*.{html,hbs,handlebars}',
     js: srcPath + 'assets/js/**/*.js',
     jsLib: srcPath + 'assets/js/_lib/**/*.js',
     css: srcPath + 'assets/scss/**/*.scss',
@@ -81,6 +81,8 @@ function serve() {
   browserSync.init({
     server: { baseDir: './' + distPath },
     startPath: '/pages/',
+    // Stop opening browser after server starts
+    open: false,
   });
 }
 
