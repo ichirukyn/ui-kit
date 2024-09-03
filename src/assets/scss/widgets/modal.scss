@@ -1,4 +1,6 @@
-.modal__wrapper {
+.modal {
+  margin: 0 !important;
+
   position: fixed;
   min-width: 300px;
   padding: 40px;
@@ -14,9 +16,10 @@
     max-height: 100%;
     overflow: auto;
     padding: 20px 25px;
+    background: var(--gray_700);
   }
 
-  &__active {
+  &_active {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -45,20 +48,18 @@
 
   &__close {
     position: absolute;
-    top: 40px;
-    right: 40px;
+    top: 25px;
+    right: 25px;
     cursor: pointer;
     pointer-events: all;
+
+    & * {
+      pointer-events: none;
+    }
 
     @include max-768 {
       top: 20px;
       right: 20px;
     }
-  }
-
-  &__close_btn {
-    cursor: pointer;
-    pointer-events: all !important;
-    user-select: all !important;
   }
 }
