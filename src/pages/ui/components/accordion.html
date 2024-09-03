@@ -1,3 +1,7 @@
+---
+title: 123
+---
+
 <div class='flex_column gap_10 markdown w_100p'>
   {{#markdown}}
 
@@ -34,47 +38,36 @@
 
   ###### `data-acc=id`
   Нужен для разграничения аккордионов на страницы и особенно для вложенных аккордионов.
-  {{/markdown}}
 
-  {{#markdown}}
   ##### Примеры
-
-  ###### Простой аккордион
-
-
-  {{/markdown}}
 
   <div class='accordion' data-acc='1'>
     <div class='accordion__open block_centerY' data-acc='1'>
       <p class='text_title'>Простой аккордион</p>
       <svg src='arrow-up.svg' class='arrow arrow_rotate_180'></svg>
     </div>
-
     <div class='accordion__panel' data-acc='1'>
       <p>any content</p>
     </div>
   </div>
 
-  {{#markdown}}
-  Простой пример компонента, вынесенный в униварсальный partials:
+  Простой пример компонента, вынесенный в partials:
 
-  {{#> accordion_component id='2' title='Простой аккордион' arrow-style='arrow_rotate_180'}}
-  <p>any content</p>
-  {{/accordion_component}}
+  {{#> accordion id='2' title='Простой аккордион 2' arrow-style='arrow_rotate_180'}}
+    <p>any content</p>
+  {{/accordion}}
 
   <p class='divider'></p>
-  {{/markdown}}
 
-  {{#markdown}}
   ###### Аккордион со стилями
   В этом примере мы добавили стили, но чтобы было удобнее разделять стили блока и компонента. Так же добавили плавное
   открытие за счёт `.accordion_transition`.
 
   <div class='bg_gray_600 p_10 brs_10 w_100p'>
-    {{#> accordion_component wrapper-style='accordion_transition w_100p' id='3' title='Аккордион'
+    {{#> accordion wrapper-style='accordion_transition w_100p' id='3' title='Аккордион'
     arrow-style='arrow_rotate_180' outside=''}}
     <p>any content</p>
-    {{/accordion_component}}
+    {{/accordion}}
   </div>
 
   <p class='divider'></p>

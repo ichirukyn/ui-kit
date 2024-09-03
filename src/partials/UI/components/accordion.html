@@ -4,18 +4,16 @@
     <p class='text_title'>{{title}}</p>
     <svg src='arrow-up.svg' class='arrow {{arrow-style}}'></svg>
   </div>
-
   <!-- Если 'outside' не задан, тогда отрисует внутреннюю часть -->
   {{#ifequal outside undefined}}
+    <div class='accordion__panel {{panel-style}} {{active}}' data-acc='{{id}}'>
+      {{> @partial-block }}
+    </div>
+  {{/ifequal}}
+</div>
+<!-- Если 'outside' есть, тогда отрисует внутреннюю часть -->
+{{#ifequal outside ''}}
   <div class='accordion__panel {{panel-style}} {{active}}' data-acc='{{id}}'>
     {{> @partial-block }}
   </div>
-  {{/ifequal}}
-</div>
-
-<!-- Если 'outside' есть, тогда отрисует внутреннюю часть -->
-{{#ifequal outside ''}}
-<div class='accordion__panel {{panel-style}} {{active}}' data-acc='{{id}}'>
-  {{> @partial-block }}
-</div>
 {{/ifequal}}
