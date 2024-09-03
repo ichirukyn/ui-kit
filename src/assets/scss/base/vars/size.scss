@@ -89,3 +89,31 @@ $select_size: (
     select-radius: 4px,
   ),
 );
+
+
+$select_size: (
+  lg: (
+    switch-track-width: 62px,
+    switch-track-height: 24px,
+    switch-track-padding: 4px,
+    switch-ball-width: 18px,
+    switch-ball-height: 18px,
+    switch-radius: var(--switch-radius),
+  ),
+  md: (
+    switch-track-width: 46px,
+    switch-track-height: 22px,
+    switch-track-padding: 3px,
+    switch-ball-width: 18px,
+    switch-ball-height: 18px,
+    switch-radius: var(--switch-radius),
+  ),
+  sm: (
+    switch-track-width: 36px,
+    switch-track-height: 18px,
+    switch-track-padding: 3px,
+    switch-ball-width: 14px,
+    switch-ball-height: 14px,
+    switch-radius: var(--switch-radius),
+  ),
+);

@@ -106,6 +106,40 @@ $wrap_gap: 10px 10px;
   --divider-25p: rgba(0, 0, 0, 0.03);
 }
 
+.switch {
+  --switch-track-width: 46px;
+  --switch-track-height: 22px;
+  --switch-track-padding: 2px;
+
+  --switch-ball-width: 18px;
+  --switch-ball-height: 18px;
+
+  --switch-track-bg: rgba(0, 0, 0, .25);
+  --switch-track-border: 1px solid #00000020;
+
+  --switch-radius: 25px;
+
+  --main-color: var(--gray_700);
+  --main-color-hover: var(--gray_600);
+  --main-bg: var(--primary_100);
+  --main-bg-hover: var(--primary_0);
+
+  --sub-color: var(--gray_700);
+  --sub-color-hover: var(--gray_600);
+  --sub-bg: var(--secondary_100);
+  --sub-bg-hover: var(--secondary_0);
+
+
+  @each $k, $v in $select_size {
+    --switch-#{$k}-track-width: #{map.get($v, "switch-track-width")};
+    --switch-#{$k}-track-height: #{map.get($v, "switch-track-height")};
+    --switch-#{$k}-track-padding: #{map.get($v, "switch-track-padding")};
+    --switch-#{$k}-ball-width: #{map.get($v, "switch-ball-width")};
+    --switch-#{$k}-ball-height: #{map.get($v, "switch-ball-height")};
+    --switch-#{$k}-radius: #{map.get($v, "switch-radius")};
+  }
+}
+
 /* Policy */
 .policy__wrapper {
   --policy-color-text-bold: var(--text_color);

@@ -1,37 +1,107 @@
+@use "sass:map";
+
+
 .switch {
+  cursor: pointer;
+
   &__track {
     position: relative;
-    min-width: 44px;
-    height: 22px;
+    display: flex;
+    align-items: center;
 
-    background-color: rgba(0, 0, 0, .25);
-    border: 2px solid rgba(0, 0, 0, .25);
-    border-radius: 25px;
+    min-width: var(--switch-track-width);
+    height: var(--switch-track-height);
+    padding: var(--switch-track-padding);
+    background-color: var(--switch-track-bg);
+    border: var(--switch-track-border);
+    border-radius: var(--switch-radius);
 
     transition: var(--transition-delay);
-    cursor: pointer;
+    pointer-events: none;
 
     &::after {
       content: " ";
 
-      position: absolute;
+      position: relative;
       top: 0;
       left: 0;
-      width: 18px;
-      height: 18px;
 
+      width: var(--switch-ball-width);
+      height: var(--switch-ball-height);
       background-color: #fff;
-      border-radius: 25px;
-      cursor: pointer;
+      border-radius: var(--switch-radius);
       transition: var(--transition-delay) ease-in-out;
+    }
+  }
+  
+  &.disabled {
+    cursor: default;
+  }
+
+  &.active &__track {
+    background-color: #1890ff;
+
+    &:after {
+      transform: translateX(
+          calc(var(--switch-track-width) - var(--switch-ball-width) - (var(--switch-track-padding) * 2))
+      )
+    }
+  }
+}
+
+
+// Size
+@each $k, $v in $size_map {
+  .switch.#{$k} {
+    //height: var(--sw#{$k}-height);
+    .switch__track {
+      min-width: var(--switch-#{$k}-track-width);
+      height: var(--switch-#{$k}-track-height);
+      padding: var(--switch-#{$k}-track-padding);
+      border-radius: var(--switch-#{$k}-radius);
+
+      &::after {
+        width: var(--switch-#{$k}-ball-width);
+        height: var(--switch-#{$k}-ball-height);
+
+        border-radius: var(--switch-#{$k}-radius);
+      }
+    }
+
+    &.active .switch__track::after {
+      transform: translateX(
+          calc(var(--switch-#{$k}-track-width) - var(--switch-#{$k}-ball-width) - (var(--switch-#{$k}-track-padding) * 2))
+      )
+    }
+  }
+}
+
+//// Colors
+@each $k, $v in $components_colors {
+  .switch#{$k} {
+    .switch__track {
+      background-color: map.get($v, "sub-color");
+
+      &::after {
+        background: map.get($v, "main-color");
+      }
+    }
+
+    &:hover .switch__track {
+      background-color: map.get($v, "sub-color-hover");
     }
 
     &.active {
-      background-color: #1890ff;
+      .switch__track {
+        background-color: map.get($v, "main-color");
 
-      &:after {
-        margin-left: -1px;
-        transform: translateX(130%)
+        &::after {
+          background-color: map.get($v, "sub-color");
+        }
+      }
+
+      &:hover .switch__track {
+        background-color: map.get($v, "main-color-hover");
       }
     }
   }

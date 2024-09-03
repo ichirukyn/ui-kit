@@ -11,54 +11,72 @@ title: Переключатель
     <button class='switch__track'></button>
   </div>
 
-  <div class='switch'>
-    <input type='radio' class='switch__track' name='name'>
-  </div>
-  <div class='switch'>
-    <input type='radio' class='switch__track' name='name'>
-  </div>
-  <div class='switch'>
-    <input type='radio' class='switch__track' name='name'>
-  </div>
 
   ###### Переключатель с привязкой к input
 
   <div class='switch flex_centerY gap_10'>
-    <button type='button' role='switch' class='switch__track'>
-      <input type='checkbox' class='hidden' name='name'>
-    </button>
+    <input type='checkbox' class='switch__track'>
   </div>
 
 
   ###### Группа переключателей с привязкой к input
 
-  <div>
-    <div class='switch flex_centerY gap_10'>
-      <button type='button' role='switch' class='switch__track'>
-        <input type='radion' class='hidden' name='name_2'>
-      </button>
-      <label class='text_note m_0 word-break'>С текстом</label>
+  <div class='flex column gap_5'>
+    <div class='switch'>
+      <input type='radio' class='switch__track' name='name'>
     </div>
-    <div class='switch flex_centerY gap_10'>
-      <button type='button' role='switch' class='switch__track'>
-        <input type='radion' class='hidden' name='name_2'>
-      </button>
-      <label class='text_note m_0 word-break'>С текстом</label>
+    <div class='switch'>
+      <input type='radio' class='switch__track' name='name'>
     </div>
-    <div class='switch flex_centerY gap_10'>
-      <button type='button' role='switch' class='switch__track'>
-        <input type='radion' class='hidden' name='name_2'>
-      </button>
-      <label class='text_note m_0 word-break'>С текстом</label>
+    <div class='switch'>
+      <input type='radio' class='switch__track' name='name'>
     </div>
   </div>
 
-  ###### Переключатель с текстом
-
+  <div class='flex column gap_5'>
+    <div class='switch flex_centerY gap_10'>
+      <input type='radio' class='switch__track' name='name_2'>
+      <label class='text_note'>С текстом</label>
+    </div>
+    <div class='switch flex_centerY gap_10'>
+      <input type='radio' class='switch__track' name='name_2'>
+      <label class='text_note'>С текстом</label>
+    </div>
+    <div class='switch flex_centerY gap_10'>
+      <input type='radio' class='switch__track' name='name_2'>
+      <label class='text_note'>С текстом</label>
+    </div>
+  </div>
 
   ###### Цвет
 
+  <div class='flex column gap_5'>
+    <div class='switch sub active'>
+      <input type='checkbox' class='switch__track'>
+    </div>
+    <div class='switch success active'>
+      <input type='checkbox' class='switch__track'>
+    </div>
+    <div class='switch disabled active'>
+      <input type='checkbox' class='switch__track'>
+    </div>
+  </div>
+
   ###### Размер
+
+  <div class='flex column gap_5'>
+    <div class='switch lg'>
+      <input type='checkbox' class='switch__track'>
+    </div>
+    <div class='switch md'>
+      <input type='checkbox' class='switch__track'>
+    </div>
+    <div class='switch sm'>
+      <input type='checkbox' class='switch__track'>
+    </div>
+  </div>
+
   {{/markdown}}
 
+  <input type='checkbox' role='switch' class='toggle' checked />
 </div>

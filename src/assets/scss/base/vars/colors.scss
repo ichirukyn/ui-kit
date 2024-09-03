@@ -20,8 +20,8 @@ $colors: (
   // func-color
   color_active: #3D8AFF,
   color_active_hover: #2276F6,
-  color_disable: #00000042,
-  color_disable_hover: #0000001f,
+  color_disable: rgba(0, 0, 0, 0.22),
+  color_disable_hover: rgba(0, 0, 0, 0.25),
   // others-color
   error_0: #DA363E,
   error_100: #FF5372,
