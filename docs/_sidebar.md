@@ -4,6 +4,7 @@
   - [Как устроены стили](base-style.md)
   - [Как использовать JS](base-js.md)
   - [Как работать с panini](base-panini.md)
+  - [Как работать с i18n](base-i18n.md)
 
 
 - Настройка:
