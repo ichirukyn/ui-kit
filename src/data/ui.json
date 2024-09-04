@@ -46,6 +46,11 @@
       "key": "accordion",
       "title": "Аккордион",
       "url": "/pages/ui/components/accordion.html"
+    },
+    {
+      "key": "slice",
+      "title": "Слайдер До/После",
+      "url": "/pages/ui/components/slice.html"
     }
   ],
   "animations": [

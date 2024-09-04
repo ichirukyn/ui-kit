@@ -1,0 +1,99 @@
+.slice {
+  --container-border: 2px solid #ccc;
+  --container-radius: 10px;
+  --control-width: 10px;
+
+  --text-offsetY: 10px;
+  --text-offsetX: 10px;
+  --text-color: var(--gray_700);
+  --text-bg: rgba(0, 0, 0, 0.5);
+  --text-radius: 10px;
+  --text-padding: 10px;
+
+  position: relative;
+  width: 100%;
+  border: var(--container-border);
+  border-radius: var(--container-radius);
+  overflow: hidden;
+
+  & * {
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+
+    &_before {
+      // Здесь прописать путь к заглушкам, на случай если data-img будет неуказан/недоступен
+      background-image: url("https://petapixel.com/assets/uploads/2017/12/bkqXgZ6.jpg");
+    }
+
+    &_after {
+      background-image: url("https://petapixel.com/assets/uploads/2017/12/rbtNDUk.jpg");
+      clip-path: inset(0% 0% 0% 50%);
+    }
+  }
+
+  &__control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 2;
+
+    width: var(--control-width);
+    background: rgba(0, 0, 0, 0.6);
+    transform: translateX(-50%);
+    pointer-events: all;
+    cursor: ew-resize;
+  }
+
+  &__text {
+    position: absolute;
+    bottom: var(--text-offsetY);
+    z-index: 3;
+
+    padding: var(--text-padding);
+    color: var(--text-color);
+    background: var(--text-bg);
+    border-radius: var(--text-radius);
+
+    &_before {
+      left: var(--text-offsetX);
+    }
+
+    &_after {
+      right: var(--text-offsetX);
+    }
+  }
+
+  &.slice_horizontal {
+    .slice__image_after {
+      clip-path: inset(50% 0 0 0);
+    }
+
+    .slice__control {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: var(--control-width);
+      transform: translate(0, calc(-1 * (var(--control-width) / 2)));
+      cursor: s-resize;
+    }
+  }
+
+  &.slice_diagonal {
+    &__image_after {
+      clip-path: polygon(0 0, 50% 0, 0 100%);
+    }
+  }
+}

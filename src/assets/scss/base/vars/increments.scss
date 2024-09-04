@@ -35,8 +35,8 @@ $increment_to_100_5: ();
   $increment: map-merge($increment, ($key: $i * 10));
 }
 
-// Шаг 20px (220px - 400px)
-@for $i from 11 through 20 {
+// Шаг 20px (220px - 800px)
+@for $i from 11 through 40 {
   $key: $i * 20;
   $increment: map-merge($increment, ($key: $i * 20));
 }
