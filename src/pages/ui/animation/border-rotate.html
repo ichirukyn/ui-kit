@@ -1,0 +1,52 @@
+---
+layout: ui-kit
+title: Вращение обводки
+---
+
+<div class='content markdown'>
+  {{#markdown}}
+  `block_border` Является основным классом, для инициализации необходимы стилей, модификаторы же необходимы для запуска
+  анимаций и корректировки некоторых стилей (прим. `block_border-rotate-ccw`)
+
+  По умолчанию весь контент располагается по центру, для удобства выравнивание градиента-подложки. Для выравнивания по
+  нужному краю, рекомендуется сделать вложенный блок с заполнением ширины и высоты по родителю. Для фиксированных
+  размеров родителя, в противном случае можно не указывать размеры и всё будет автоматически подгоняться под контент.
+
+  <div class='flex'>
+    <div class='w_200 h_400 block_border block_border-rotate-ccw'>
+      <h5 class='text_effect text_effect-glitch text_gray_700'>test text</h5>
+    </div>
+    <div class='w_400 h_200 block_border block_border-rotate-cw block_border-horizontal'>
+      <div class='flex column justify_start w_100p h_100p'>
+        <h5 class='text_effect text_effect-glitch text_gray_700'>test text</h5>
+      </div>
+    </div>
+  </div>
+
+  Скольжение по вертикали и горизонтали:
+  <div class='flex'>
+    <div class='w_120 h_120 block_border block_border-slideX'></div>
+    <div class='w_120 h_120 block_border block_border-slideY'></div>
+  </div>
+
+
+  Пример автоматической подгонки под ширину контента:
+  <div class='block_border block_border-slideY'>
+    <div class='p_10'>
+      <h5 class='text_gray_700'>Подгонка border под ширину контента</h5>
+    </div>
+  </div>
+
+
+  Если блок получается горизонтальным, следует добавить `.block_border-horizontal`, чтобы не было проблем с
+  отображением.
+
+  <div class='block_border block_border-rotate-cw'>
+    <div class='p_10'>
+      <h5 class='text_gray_700'>Пример горизонтального блока без ".block_border-horizontal"</h5>
+    </div>
+  </div>
+
+
+  {{/markdown}}
+</div>
