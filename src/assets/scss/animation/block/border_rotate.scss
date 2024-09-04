@@ -1,0 +1,118 @@
+.block_border {
+  --main-color: yellow;
+  --sub-color: red;
+  --block-bg: var(--gray_0);
+
+  --rotate-delay: 3s;
+  --slide-delay: 3s;
+
+  --border-size: 5px;
+  --border-width: 50%;
+  --border-height: 140%;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--border-size);
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+
+    width: var(--border-width);
+    height: var(--border-height);
+    background: linear-gradient(90deg, var(--main-color) 0%, var(--sub-color) 100%);
+  }
+
+  &:after {
+    content: '';
+    background: inherit;
+    position: absolute;
+    z-index: -1;
+
+    inset: var(--border-size);
+    background: var(--block-bg);
+  }
+
+  &-horizontal:before, &-slideY:before {
+    width: var(--border-height);
+    height: var(--border-width);
+    background: linear-gradient(180deg, var(--main-color) 0%, var(--sub-color) 100%);
+  }
+
+  &-rotate-cw:before {
+    animation: rotate-cw var(--rotate-delay) linear infinite;
+  }
+
+  &-rotate-ccw:before {
+    animation: rotate-ccw var(--rotate-delay) linear infinite;
+  }
+
+  &-slideY:before {
+    animation: slideY var(--slide-delay) linear infinite;
+  }
+
+  &-slideX:before {
+    animation: slideX var(--slide-delay) linear infinite;
+  }
+}
+
+@keyframes rotate-cw {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-ccw {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes slideX {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  50% {
+    transform: translateX(150%);
+  }
+
+  51% {
+    transform: translateX(150%) rotateY(180deg);
+  }
+
+  100% {
+    transform: translateX(-150%) rotateY(180deg);
+  }
+}
+
+@keyframes slideY {
+  0% {
+    transform: translateY(-150%);
+  }
+
+  50% {
+    transform: translateY(150%);
+  }
+
+  51% {
+    transform: translateY(150%) rotateX(180deg);
+  }
+
+  100% {
+    transform: translateY(-150%) rotateX(180deg);
+  }
+}

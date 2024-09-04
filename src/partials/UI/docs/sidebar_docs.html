@@ -19,4 +19,13 @@
         {{/each}}
       </ul>
   </ul>
+  <ul>
+    <li>
+      Анимации:
+      <ul>
+        {{#each ui.animations}}
+        <li class='{{#ifpage key}}active{{/ifpage}}'><a href='{{url}}'>{{title}}</a></li>
+        {{/each}}
+      </ul>
+  </ul>
 </div>

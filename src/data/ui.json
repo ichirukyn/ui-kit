@@ -47,5 +47,27 @@
       "title": "Аккордион",
       "url": "/pages/ui/components/accordion.html"
     }
+  ],
+  "animations": [
+    {
+      "key": "typing",
+      "title": "Набор текста",
+      "url": "/pages/ui/animation/typing.html"
+    },
+    {
+      "key": "appear",
+      "title": "Появление текста",
+      "url": "/pages/ui/animation/appear.html"
+    },
+    {
+      "key": "effects",
+      "title": "Эффекты текста",
+      "url": "/pages/ui/animation/effects.html"
+    },
+    {
+      "key": "border-rotate",
+      "title": "Вращение обводки",
+      "url": "/pages/ui/animation/border-rotate.html"
+    }
   ]
 }
